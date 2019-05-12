@@ -116,13 +116,4 @@ module mips_16_core_top
         .pipeline_stall_n       (pipeline_stall_n)
     );
     
-endmodule 
-
-
-
-
- 
-
-
-
-
+endmodule

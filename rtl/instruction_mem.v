@@ -11,6 +11,7 @@
 `timescale 1ns/1ps
 `include "mips_16_defs.v"
  
+ // Simulation module
 `ifdef USE_SIMULATION_CODE
 module instruction_mem      // a rtl simulation rom, rom initial code can be found in the testbench
 (
@@ -21,20 +22,15 @@ module instruction_mem      // a rtl simulation rom, rom initial code can be fou
 );
     
     reg [15:0] rom [2**`INSTR_MEM_ADDR_WIDTH-1 : 0];
-    
     wire [`INSTR_MEM_ADDR_WIDTH-1 : 0] rom_addr = pc[`INSTR_MEM_ADDR_WIDTH-1 : 0];
-    
-    // always @ (posedge clk) begin
-    // always @ (*) begin
-        // instruction = rom[rom_addr];
-    // end
-    
+
     assign instruction = rom[rom_addr];
-    
     
 endmodule 
 `endif
 
+
+// Synthesis module
 `ifndef USE_SIMULATION_CODE     
 module instruction_mem      // a synthesisable rom implementation
 (
@@ -45,17 +41,7 @@ module instruction_mem      // a synthesisable rom implementation
 );
     
     wire [`INSTR_MEM_ADDR_WIDTH-1 : 0] rom_addr = pc[`INSTR_MEM_ADDR_WIDTH-1 : 0];
-    
-    // ASM code in rom:
-    // L1:  ADDI        R1,R0,8
-    //      ADDI        R2,R1,8
-    //      ADDI        R3,R2,8
-    //      ADD         R4,R2,R3
-    //      ST          R4,R1,2
-    //      LD          R5,R1,2
-    //      SUB         R6,R4,R5
-    //      BZ          R6,L1
-    //      ADDI        R7,R7,1
+
     always @(*)
         case (rom_addr)
             4'b0000: instruction = 16'b1001001000001000;

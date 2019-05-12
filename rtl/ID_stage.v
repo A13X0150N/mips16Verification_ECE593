@@ -15,15 +15,12 @@ module ID_stage
 (
     input                   clk,
     input                   rst,
-    input                   instruction_decode_en,
-    //input                 insert_bubble,
-    
+    input                   instruction_decode_en,  
     
     // to EX_stage
     output  reg [56:0]      pipeline_reg_out,   //  [56:22],35bits: ex_alu_cmd[2:0], ex_alu_src1[15:0], ex_alu_src2[15:0]
                                                 //  [21:5],17bits:  mem_write_en, mem_write_data[15:0]
                                                 //  [4:0],5bits:    write_back_en, write_back_dest[2:0], write_back_result_mux, 
-    
     // to IF_stage
     input       [15:0]      instruction,
     output      [5:0]       branch_offset_imm,
@@ -38,7 +35,6 @@ module ID_stage
     // to hazard detection unit
     output      [2:0]       decoding_op_src1,       //source_1 register number
     output      [2:0]       decoding_op_src2        //source_2 register number
-    
 );
     
     /********************** internal wires ***********************************/
@@ -68,9 +64,7 @@ module ID_stage
     wire                decoding_op_is_store;   //S6
     wire    [3:0]       ir_op_code_with_bubble;
     wire    [2:0]       ir_dest_with_bubble;
-    //reg                   branch_condition_satisfied;
-    
-    
+
     /********************** Instruction Register *********************/
     always @ (posedge clk or posedge rst) begin
         if(rst) begin
@@ -202,10 +196,6 @@ module ID_stage
                         write_back_result_mux   = 1'bx;     // S1
                         ex_alu_cmd              = `ALU_NC;  // S2
                         alu_src2_mux            = 1'bx;     // S4
-`ifndef CODE_FOR_SYNTHESIS
-                        $display("ERROR: Unknown Instruction: %b", ir_op_code_with_bubble);
-                        //$stop;
-`endif
                     end
             endcase
         end
@@ -220,11 +210,6 @@ module ID_stage
     assign write_back_dest = ir_dest_with_bubble;
     assign ex_alu_src1 = reg_read_data_1;
     assign ex_alu_src2 = (alu_src2_mux)? {{10{ir_imm[5]}},ir_imm} : reg_read_data_2;
-    
-    //  pipeline_reg_out:
-    //  [56:22],35bits: ex_alu_cmd[2:0], ex_alu_src1[15:0], ex_alu_src2[15:0],
-    //  [21:5],17bits:  mem_write_en, mem_write_data[15:0],
-    //  [4:0],5bits:    write_back_en, write_back_dest[2:0], write_back_result_mux,
     
     always @ (posedge clk or posedge rst) begin
         if(rst) begin
@@ -243,8 +228,7 @@ module ID_stage
                 };
         end
     end
-    
-             
+
     /********************** interface with register file *********************/
     assign reg_read_addr_1 = ir_src1;
     assign reg_read_addr_2 = ir_src2;
@@ -262,13 +246,7 @@ module ID_stage
                     end
                     
                 default:
-                    begin
                         branch_taken = 0;
-`ifndef CODE_FOR_SYNTHESIS
-                        $display("ERROR: Unknown branch condition %b, in branch instruction %b \n", ir_dest_with_bubble, ir_op_code_with_bubble);
-                        //$stop;
-`endif                  
-                    end
             endcase
         end
         else begin
@@ -276,7 +254,6 @@ module ID_stage
         end
     end
     assign branch_offset_imm = ir_imm;
-    //assign branch_taken = decoding_op_is_branch & branch_condition_satisfied ;
     
     /********************** to hazard detection unit *********************/
     assign decoding_op_src1 = ir_src1;
@@ -285,7 +262,5 @@ module ID_stage
                     ir_op_code == `OP_ADDI  ||
                     ir_op_code == `OP_LD    ||
                     ir_op_code == `OP_BZ    
-                    )?
-                    3'b000 : ir_src2;
-    
-endmodule 
+                    ) ? 3'b000 : ir_src2;
+endmodule

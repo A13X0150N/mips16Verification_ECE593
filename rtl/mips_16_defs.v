@@ -46,10 +46,6 @@
     
     /************** Branch condition code ****************/
     `define BRANCH_Z        3'b000
-    //`define BRANCH_GT     3'b001
-    //`define BRANCH_LE     3'b010
-    
- 
  
  `endif
  

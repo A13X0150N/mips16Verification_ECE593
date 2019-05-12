@@ -11,15 +11,12 @@
 `timescale 1ns/1ps
 `include "mips_16_defs.v"
 module WB_stage
-(
-    //input                 clk,
-    
-    // from EX stage
+(   
+    // From EX stage
     input       [36:0]      pipeline_reg_in,    //  [36:21],16bits: ex_alu_result[15:0]
                                                 //  [20:5],16bits:  mem_read_data[15:0]
                                                 //  [4:0],5bits:    write_back_en, write_back_dest[2:0], write_back_result_mux, 
-    
-    // to register file
+    // To register file
     output                  reg_write_en,
     output      [2:0]       reg_write_dest,
     output      [15:0]      reg_write_data,

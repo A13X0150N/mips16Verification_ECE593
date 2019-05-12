@@ -35,7 +35,6 @@ module MEM_stage
     wire    [15:0]      mem_read_data ;     
     
     /********************** Data memory *********************/
-    // a ram
     data_mem dmem (
         .clk(clk), 
         .mem_access_addr    ( ex_alu_result ), 
@@ -55,8 +54,7 @@ module MEM_stage
             pipeline_reg_out[4:0]   <= pipeline_reg_in[4:0];
         end
     end
-    
-    
+
     /********************** to hazard detection unit *********************/
     assign mem_op_dest = pipeline_reg_in[3:1];
 

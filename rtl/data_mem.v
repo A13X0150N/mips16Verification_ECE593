@@ -22,13 +22,10 @@ module data_mem
     input   [15:0]          mem_write_data,
     input                   mem_write_en,
     // read port
-    output  [15:0]          mem_read_data
-    
+    output  [15:0]          mem_read_data  
 );
 
-
     reg [15:0] ram [(2**`DATA_MEM_ADDR_WIDTH)-1:0];
-
     wire [`DATA_MEM_ADDR_WIDTH-1 : 0] ram_addr = mem_access_addr[`DATA_MEM_ADDR_WIDTH-1 : 0];
 
     always @(posedge clk)

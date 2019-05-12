@@ -12,11 +12,11 @@
 `include "mips_16_defs.v"
 module alu
 (
-    input       [15:0]  a,      //src1
-    input       [15:0]  b,      //src2
-    input       [2:0]   cmd,    //function sel
+    input       [15:0]  a,      // src1
+    input       [15:0]  b,      // src2
+    input       [2:0]   cmd,    // function sel
     
-    output  reg [15:0]  r       //result    
+    output  reg [15:0]  r       // result    
 );
     always @ (*) begin
         case(cmd)
@@ -39,13 +39,7 @@ module alu
             `ALU_SRU    :
                 r = {16'b0,a} >> b;
             default :
-                begin
-                    r = 0;
-`ifndef CODE_FOR_SYNTHESIS
-                    $display("ERROR: Unknown alu cmd: %b \n", cmd);
-                    //$stop;
-`endif
-                end
+                r = 0;
         endcase
     end
     

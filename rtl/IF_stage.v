@@ -11,7 +11,6 @@
 `timescale 1ns/1ps
 `include "mips_16_defs.v"
 
-
 module IF_stage
 (
     input                           clk,
@@ -24,7 +23,7 @@ module IF_stage
     output  reg [`PC_WIDTH-1:0]     pc,
     output  [15:0]                  instruction
 );
-    
+
     // pc control
     always @ (posedge clk or posedge rst) begin
         if (rst) begin
@@ -45,12 +44,7 @@ module IF_stage
     instruction_mem imem(
         .clk                (clk),
         .pc                 (pc),
-        
         .instruction        (instruction)
     );
     
-    
 endmodule 
-
-
-
