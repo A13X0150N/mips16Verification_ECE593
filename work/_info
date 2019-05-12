@@ -1,0 +1,235 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+d/u/aleolson/smb_files/QuestaSim/ECE593/mips16Verification_ECE593/bench/mips_16_core_top
+valu
+Z0 !s110 1557632696
+!i10b 1
+!s100 ?7E56?Qb^XScz=U_E8?mb0
+IiJCFE]?UoIjYJfoc]R55Y1
+Z1 VDg1SIo80bB@j0V0VzS_@n1
+Z2 d/home/aleolson/common/smb_files/QuestaSim/ECE593/mips16Verification_ECE593
+Z3 w1557206852
+8/home/aleolson/common/smb_files/QuestaSim/ECE593/mips16Verification_ECE593/rtl/alu.v
+F/home/aleolson/common/smb_files/QuestaSim/ECE593/mips16Verification_ECE593/rtl/alu.v
+Z4 L0 13
+Z5 OL;L;10.4c;61
+r1
+!s85 0
+31
+Z6 !s108 1557632696.000000
+!s107 /home/aleolson/common/smb_files/QuestaSim/ECE593/mips16Verification_ECE593/rtl/mips_16_defs.v|/home/aleolson/common/smb_files/QuestaSim/ECE593/mips16Verification_ECE593/rtl/alu.v|
+!s90 -reportprogress|300|-work|work|-vopt|-stats=none|/home/aleolson/common/smb_files/QuestaSim/ECE593/mips16Verification_ECE593/rtl/alu.v|
+!i113 0
+Z7 o-work work -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+vdata_mem
+R0
+!i10b 1
+!s100 ;cdi:7;ejJme1<SiV=YBQ1
+I?XUeY95fn6[=97i:a[LPU1
+R1
+R2
+R3
+8/home/aleolson/common/smb_files/QuestaSim/ECE593/mips16Verification_ECE593/rtl/data_mem.v
+F/home/aleolson/common/smb_files/QuestaSim/ECE593/mips16Verification_ECE593/rtl/data_mem.v
+Z8 L0 14
+R5
+r1
+!s85 0
+31
+R6
+!s107 /home/aleolson/common/smb_files/QuestaSim/ECE593/mips16Verification_ECE593/rtl/mips_16_defs.v|/home/aleolson/common/smb_files/QuestaSim/ECE593/mips16Verification_ECE593/rtl/data_mem.v|
+!s90 -reportprogress|300|-work|work|-vopt|-stats=none|/home/aleolson/common/smb_files/QuestaSim/ECE593/mips16Verification_ECE593/rtl/data_mem.v|
+!i113 0
+R7
+vEX_stage
+Z9 !s110 1557632697
+!i10b 1
+!s100 [A_Yac7nfA27afPa=bR;^3
+ID_:B83?m?K03do4bB<^0g1
+R1
+R2
+Z10 w1557206851
+8/home/aleolson/common/smb_files/QuestaSim/ECE593/mips16Verification_ECE593/rtl/EX_stage.v
+F/home/aleolson/common/smb_files/QuestaSim/ECE593/mips16Verification_ECE593/rtl/EX_stage.v
+R4
+R5
+r1
+!s85 0
+31
+Z11 !s108 1557632697.000000
+!s107 /home/aleolson/common/smb_files/QuestaSim/ECE593/mips16Verification_ECE593/rtl/mips_16_defs.v|/home/aleolson/common/smb_files/QuestaSim/ECE593/mips16Verification_ECE593/rtl/EX_stage.v|
+!s90 -reportprogress|300|-work|work|-vopt|-stats=none|/home/aleolson/common/smb_files/QuestaSim/ECE593/mips16Verification_ECE593/rtl/EX_stage.v|
+!i113 0
+R7
+n@e@x_stage
+vhazard_detection_unit
+R9
+!i10b 1
+!s100 KH0d]m1`:COO?FKX0hDd22
+ITmY<3LJ=jD8_@o:0OG5IH2
+R1
+R2
+R3
+8/home/aleolson/common/smb_files/QuestaSim/ECE593/mips16Verification_ECE593/rtl/hazard_detection_unit.v
+F/home/aleolson/common/smb_files/QuestaSim/ECE593/mips16Verification_ECE593/rtl/hazard_detection_unit.v
+L0 20
+R5
+r1
+!s85 0
+31
+R11
+!s107 /home/aleolson/common/smb_files/QuestaSim/ECE593/mips16Verification_ECE593/rtl/hazard_detection_unit.v|
+!s90 -reportprogress|300|-work|work|-vopt|-stats=none|/home/aleolson/common/smb_files/QuestaSim/ECE593/mips16Verification_ECE593/rtl/hazard_detection_unit.v|
+!i113 0
+R7
+vID_stage
+R9
+!i10b 1
+!s100 Q@<KW0K6MliNVO5PDh8aT1
+I>=W??kf^BE1[6Bc0km=eU1
+R1
+R2
+R10
+8/home/aleolson/common/smb_files/QuestaSim/ECE593/mips16Verification_ECE593/rtl/ID_stage.v
+F/home/aleolson/common/smb_files/QuestaSim/ECE593/mips16Verification_ECE593/rtl/ID_stage.v
+R8
+R5
+r1
+!s85 0
+31
+R11
+!s107 /home/aleolson/common/smb_files/QuestaSim/ECE593/mips16Verification_ECE593/rtl/mips_16_defs.v|/home/aleolson/common/smb_files/QuestaSim/ECE593/mips16Verification_ECE593/rtl/ID_stage.v|
+!s90 -reportprogress|300|-work|work|-vopt|-stats=none|/home/aleolson/common/smb_files/QuestaSim/ECE593/mips16Verification_ECE593/rtl/ID_stage.v|
+!i113 0
+R7
+n@i@d_stage
+vIF_stage
+Z12 !s110 1557632698
+!i10b 1
+!s100 8@8e@f=VmY4SQW^`Qm=`]2
+IGB219Hgl2gzQGU;cU?QzH3
+R1
+R2
+R10
+8/home/aleolson/common/smb_files/QuestaSim/ECE593/mips16Verification_ECE593/rtl/IF_stage.v
+F/home/aleolson/common/smb_files/QuestaSim/ECE593/mips16Verification_ECE593/rtl/IF_stage.v
+Z13 L0 15
+R5
+r1
+!s85 0
+31
+R11
+!s107 /home/aleolson/common/smb_files/QuestaSim/ECE593/mips16Verification_ECE593/rtl/mips_16_defs.v|/home/aleolson/common/smb_files/QuestaSim/ECE593/mips16Verification_ECE593/rtl/IF_stage.v|
+!s90 -reportprogress|300|-work|work|-vopt|-stats=none|/home/aleolson/common/smb_files/QuestaSim/ECE593/mips16Verification_ECE593/rtl/IF_stage.v|
+!i113 0
+R7
+n@i@f_stage
+vinstruction_mem
+R12
+!i10b 1
+!s100 =TcoSIdTbmg^g:ZUaL5WN3
+I0TFad2z?YZd[F;Ao;f4]]2
+R1
+R2
+R3
+8/home/aleolson/common/smb_files/QuestaSim/ECE593/mips16Verification_ECE593/rtl/instruction_mem.v
+F/home/aleolson/common/smb_files/QuestaSim/ECE593/mips16Verification_ECE593/rtl/instruction_mem.v
+R13
+R5
+r1
+!s85 0
+31
+Z14 !s108 1557632698.000000
+!s107 /home/aleolson/common/smb_files/QuestaSim/ECE593/mips16Verification_ECE593/rtl/mips_16_defs.v|/home/aleolson/common/smb_files/QuestaSim/ECE593/mips16Verification_ECE593/rtl/instruction_mem.v|
+!s90 -reportprogress|300|-work|work|-vopt|-stats=none|/home/aleolson/common/smb_files/QuestaSim/ECE593/mips16Verification_ECE593/rtl/instruction_mem.v|
+!i113 0
+R7
+vMEM_stage
+R12
+!i10b 1
+!s100 1PXnafAfzVznDS2RH<F<F2
+IadacRbC=JM=OFAXJ:oK6c1
+R1
+R2
+R10
+8/home/aleolson/common/smb_files/QuestaSim/ECE593/mips16Verification_ECE593/rtl/MEM_stage.v
+F/home/aleolson/common/smb_files/QuestaSim/ECE593/mips16Verification_ECE593/rtl/MEM_stage.v
+R8
+R5
+r1
+!s85 0
+31
+R14
+!s107 /home/aleolson/common/smb_files/QuestaSim/ECE593/mips16Verification_ECE593/rtl/mips_16_defs.v|/home/aleolson/common/smb_files/QuestaSim/ECE593/mips16Verification_ECE593/rtl/MEM_stage.v|
+!s90 -reportprogress|300|-work|work|-vopt|-stats=none|/home/aleolson/common/smb_files/QuestaSim/ECE593/mips16Verification_ECE593/rtl/MEM_stage.v|
+!i113 0
+R7
+n@m@e@m_stage
+vmips_16_core_top
+Z15 !s110 1557632699
+!i10b 1
+!s100 ]gn7cZc:OgiUQ]bZ@3CZl1
+I;0bm84Y0lM^n]TGQOl?bP3
+R1
+R2
+R3
+8/home/aleolson/common/smb_files/QuestaSim/ECE593/mips16Verification_ECE593/rtl/mips_16_core_top.v
+F/home/aleolson/common/smb_files/QuestaSim/ECE593/mips16Verification_ECE593/rtl/mips_16_core_top.v
+Z16 L0 18
+R5
+r1
+!s85 0
+31
+R14
+!s107 /home/aleolson/common/smb_files/QuestaSim/ECE593/mips16Verification_ECE593/rtl/mips_16_defs.v|/home/aleolson/common/smb_files/QuestaSim/ECE593/mips16Verification_ECE593/rtl/mips_16_core_top.v|
+!s90 -reportprogress|300|-work|work|-vopt|-stats=none|/home/aleolson/common/smb_files/QuestaSim/ECE593/mips16Verification_ECE593/rtl/mips_16_core_top.v|
+!i113 0
+R7
+vregister_file
+R15
+!i10b 1
+!s100 ]:;b`RU?CUf_[0e4zocoo3
+Il7g]P@?Y8^5M71aBR9z9Q0
+R1
+R2
+w1557206853
+8/home/aleolson/common/smb_files/QuestaSim/ECE593/mips16Verification_ECE593/rtl/register_file.v
+F/home/aleolson/common/smb_files/QuestaSim/ECE593/mips16Verification_ECE593/rtl/register_file.v
+R16
+R5
+r1
+!s85 0
+31
+Z17 !s108 1557632699.000000
+!s107 /home/aleolson/common/smb_files/QuestaSim/ECE593/mips16Verification_ECE593/rtl/mips_16_defs.v|/home/aleolson/common/smb_files/QuestaSim/ECE593/mips16Verification_ECE593/rtl/register_file.v|
+!s90 -reportprogress|300|-work|work|-vopt|-stats=none|/home/aleolson/common/smb_files/QuestaSim/ECE593/mips16Verification_ECE593/rtl/register_file.v|
+!i113 0
+R7
+vWB_stage
+R15
+!i10b 1
+!s100 ZW4UP?k[VBXT?1nXdTn=32
+I7cgFcj0FLNzR7LzHfUc[G0
+R1
+R2
+R3
+8/home/aleolson/common/smb_files/QuestaSim/ECE593/mips16Verification_ECE593/rtl/WB_stage.v
+F/home/aleolson/common/smb_files/QuestaSim/ECE593/mips16Verification_ECE593/rtl/WB_stage.v
+R4
+R5
+r1
+!s85 0
+31
+R17
+!s107 /home/aleolson/common/smb_files/QuestaSim/ECE593/mips16Verification_ECE593/rtl/mips_16_defs.v|/home/aleolson/common/smb_files/QuestaSim/ECE593/mips16Verification_ECE593/rtl/WB_stage.v|
+!s90 -reportprogress|300|-work|work|-vopt|-stats=none|/home/aleolson/common/smb_files/QuestaSim/ECE593/mips16Verification_ECE593/rtl/WB_stage.v|
+!i113 0
+R7
+n@w@b_stage
