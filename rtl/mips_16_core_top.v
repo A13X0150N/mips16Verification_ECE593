@@ -17,33 +17,32 @@
 `include "mips_16_defs.v"
 module mips_16_core_top
 (
-    inout                        clk,
-    inout                        rst,
-    inout  [`PC_WIDTH-1:0]       pc,
-
-    // Added internal signals to port list for interface attachment for verification
-    inout                        pipeline_stall_n,
-    inout    [5:0]               branch_offset_imm,
-    inout                        branch_taken,
-    inout    [15:0]              instruction,
-    inout    [56:0]              ID_pipeline_reg_out,
-    inout    [37:0]              EX_pipeline_reg_out,
-    inout    [36:0]              MEM_pipeline_reg_out,
-
-    inout    [2:0]               reg_read_addr_1,        // register file read port 1 address
-    inout    [2:0]               reg_read_addr_2,        // register file read port 2 address
-    inout    [15:0]              reg_read_data_1,        // register file read port 1 data
-    inout    [15:0]              reg_read_data_2,        // register file read port 2 data
-    inout    [2:0]               decoding_op_src1,       // source_1 register number
-    inout    [2:0]               decoding_op_src2,       // source_2 register number
-    inout    [2:0]               ex_op_dest,             // EX stage destinaton register number
-    inout    [2:0]               mem_op_dest,            // MEM stage destinaton register number
-    inout    [2:0]               wb_op_dest,             // WB stage destinaton register number
-    inout                        reg_write_en,
-    inout    [2:0]               reg_write_dest,
-    inout    [15:0]              reg_write_data
+    input                        clk,
+    input                        rst,
+    output  [`PC_WIDTH-1:0]      pc
 );
 
+    // Added internal signals to port list for interface attachment for verification
+    wire                        pipeline_stall_n;
+    wire    [5:0]               branch_offset_imm;
+    wire                        branch_taken;
+    wire    [15:0]              instruction;
+    wire    [56:0]              ID_pipeline_reg_out;
+    wire    [37:0]              EX_pipeline_reg_out;
+    wire    [36:0]              MEM_pipeline_reg_out;
+
+    wire    [2:0]               reg_read_addr_1;        // register file read port 1 address
+    wire    [2:0]               reg_read_addr_2;        // register file read port 2 address
+    wire    [15:0]              reg_read_data_1;        // register file read port 1 data
+    wire    [15:0]              reg_read_data_2;        // register file read port 2 data
+    wire    [2:0]               decoding_op_src1;       // source_1 register number
+    wire    [2:0]               decoding_op_src2;       // source_2 register number
+    wire    [2:0]               ex_op_dest;             // EX stage destinaton register number
+    wire    [2:0]               mem_op_dest;            // MEM stage destinaton register number
+    wire    [2:0]               wb_op_dest;             // WB stage destinaton register number
+    wire                        reg_write_en;
+    wire    [2:0]               reg_write_dest;
+    wire    [15:0]              reg_write_data;
 
     IF_stage IF_stage_inst (
         .clk                    (clk),

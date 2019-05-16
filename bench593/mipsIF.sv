@@ -38,8 +38,6 @@ interface mipsIF();
         rst = 1;
         repeat (10) @(posedge clk);
         rst = 0;
-
     endtask : reset
-
 
 endinterface : mipsIF
