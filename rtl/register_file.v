@@ -28,6 +28,7 @@ module register_file
     //read port 1
     input       [2:0]   reg_read_addr_1,
     output      [15:0]  reg_read_data_1,
+    
     //read port 2
     input       [2:0]   reg_read_addr_2,
     output      [15:0]  reg_read_data_2

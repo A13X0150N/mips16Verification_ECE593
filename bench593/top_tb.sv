@@ -7,7 +7,14 @@ module top_tb;
 
     // Instantiate the interface for the design
     mipsIF mif();
-    
+
+    parameter CLK_PERIOD = 10;
+    bit clk_en = 0;
+
+    // Drive the clock
+    always #(CLK_PERIOD/2)
+        mif.clk = clk_en ?  ~mif.clk : mif.clk;
+
     // Instantiate the DUV
     mips_16_core_top duv (
         .clk(mif.clk), 
@@ -33,7 +40,21 @@ module top_tb;
         .reg_write_dest(mif.reg_write_dest),
         .reg_write_data(mif.reg_write_data)
     );
-    
-   
-endmodule
 
+    task fill_inst_mem();
+        $readmemh("instructions.txt", duv.IF_stage_inst.imem.rom)
+    endtask : fill_inst_mem
+
+    task fill_data_mem();
+        $readmemh("data.txt", duv.IF_stage_inst.imem.rom)
+    endtask : fill_data_mem
+
+    task enable_clock();
+        clk_en = 1;
+    endtask : enable_clock
+
+    task disable_clock();
+        clk_en = 0;
+    endtask : disable_clock
+
+endmodule

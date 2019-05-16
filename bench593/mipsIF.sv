@@ -5,10 +5,8 @@
 `include "../rtl/mips_16_defs.v"
 interface mipsIF();
 
-    parameter CLK_PERIOD = 10;
-
-    bit                          clk=0;
-    bit                          rst=0;
+    bit                          clk;
+    bit                          rst;
     logic  [`PC_WIDTH-1:0]       pc;
 
     // Added internal signals to port list for interface attachment for verification
@@ -34,9 +32,7 @@ interface mipsIF();
     logic    [2:0]               reg_write_dest;         // WB_stage --> register_file
     logic    [15:0]              reg_write_data;         // WB_stage --> register_file
 
-    // Drive the clock
-    always #(CLK_PERIOD/2) 
-        clk =~clk;
+
 
     task reset();
         rst = 0;
@@ -44,7 +40,7 @@ interface mipsIF();
         rst = 1;
         repeat (10) @(posedge clk);
         rst = 0;
-    endtask
-   
+    endtask : reset
+
 
 endinterface : mipsIF
