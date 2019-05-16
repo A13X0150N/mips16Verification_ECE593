@@ -7,11 +7,11 @@ module top_tb;
 
     // Instantiate the interface for the design
     mipsIF mif();
-    
+
     // Instantiate the DUV
     mips_16_core_top duv (
-        .clk(mif.clk), 
-        .rst(mif.rst), 
+        .clk(mif.clk),
+        .rst(mif.rst),
         .pc(mif.pc),
         .pipeline_stall_n(mif.pipeline_stall_n),
         .branch_offset_imm(mif.branch_offset_imm),
@@ -33,7 +33,7 @@ module top_tb;
         .reg_write_dest(mif.reg_write_dest),
         .reg_write_data(mif.reg_write_data)
     );
-    
-   
+
+
 endmodule
 

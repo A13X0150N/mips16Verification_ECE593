@@ -2,7 +2,7 @@
  * Module: mips_16_core_top
  * Project: mips_16
  * Author: fzy
- * Description: 
+ * Description:
  *     top module of mips_16 cpu core. Technical details:
  *          1.  16-bit data width
  *          2.  classic 5-stage static pipeline, 1 branch delay slot, theoretical CPI is 1.0
@@ -11,7 +11,7 @@
  *          5.  up to now supports 13 instrcutions, see ./doc/instruction_set.txt for details
  *
  * Revise history:
- *     
+ *
  ***************************************************/
 `timescale 1ns/1ps
 `include "mips_16_defs.v"
@@ -29,7 +29,7 @@ module mips_16_core_top
     inout    [56:0]              ID_pipeline_reg_out,
     inout    [37:0]              EX_pipeline_reg_out,
     inout    [36:0]              MEM_pipeline_reg_out,
-    
+
     inout    [2:0]               reg_read_addr_1,        // register file read port 1 address
     inout    [2:0]               reg_read_addr_2,        // register file read port 2 address
     inout    [15:0]              reg_read_data_1,        // register file read port 1 data
@@ -43,18 +43,18 @@ module mips_16_core_top
     inout    [2:0]               reg_write_dest,
     inout    [15:0]              reg_write_data
 );
-   
-    
+
+
     IF_stage IF_stage_inst (
-        .clk                    (clk), 
-        .rst                    (rst), 
+        .clk                    (clk),
+        .rst                    (rst),
         .instruction_fetch_en   (pipeline_stall_n),
-        .branch_offset_imm      (branch_offset_imm), 
-        .branch_taken           (branch_taken), 
+        .branch_offset_imm      (branch_offset_imm),
+        .branch_taken           (branch_taken),
         .pc                     (pc),
         .instruction            (instruction)
     );
-    
+
     ID_stage ID_stage_inst (
         .clk                    (clk),
         .rst                    (rst),
@@ -67,53 +67,53 @@ module mips_16_core_top
         .reg_read_addr_2        (reg_read_addr_2),  //
         .reg_read_data_1        (reg_read_data_1),  //
         .reg_read_data_2        (reg_read_data_2),  //
-        .decoding_op_src1       (decoding_op_src1),     
+        .decoding_op_src1       (decoding_op_src1),
         .decoding_op_src2       (decoding_op_src2)
     );
-    
+
     EX_stage EX_stage_inst (
-        .clk                    (clk), 
-        .rst                    (rst), 
-        .pipeline_reg_in        (ID_pipeline_reg_out), 
-        .pipeline_reg_out       (EX_pipeline_reg_out), 
+        .clk                    (clk),
+        .rst                    (rst),
+        .pipeline_reg_in        (ID_pipeline_reg_out),
+        .pipeline_reg_out       (EX_pipeline_reg_out),
         .ex_op_dest             (ex_op_dest)
     );
-    
+
     MEM_stage MEM_stage_inst (
-        .clk                    (clk), 
-        .rst                    (rst), 
-        .pipeline_reg_in        (EX_pipeline_reg_out), 
-        .pipeline_reg_out       (MEM_pipeline_reg_out), 
+        .clk                    (clk),
+        .rst                    (rst),
+        .pipeline_reg_in        (EX_pipeline_reg_out),
+        .pipeline_reg_out       (MEM_pipeline_reg_out),
         .mem_op_dest            (mem_op_dest)
     );
-    
+
     WB_stage WB_stage_inst (
-        .pipeline_reg_in        (MEM_pipeline_reg_out), 
-        .reg_write_en           (reg_write_en), 
-        .reg_write_dest         (reg_write_dest), 
-        .reg_write_data         (reg_write_data), 
+        .pipeline_reg_in        (MEM_pipeline_reg_out),
+        .reg_write_en           (reg_write_en),
+        .reg_write_dest         (reg_write_dest),
+        .reg_write_data         (reg_write_data),
         .wb_op_dest             (wb_op_dest)
     );
-    
+
     register_file register_file_inst (
-        .clk                    (clk), 
-        .rst                    (rst), 
-        .reg_write_en           (reg_write_en), 
-        .reg_write_dest         (reg_write_dest), 
-        .reg_write_data         (reg_write_data), 
-        .reg_read_addr_1        (reg_read_addr_1), 
-        .reg_read_data_1        (reg_read_data_1), 
-        .reg_read_addr_2        (reg_read_addr_2), 
+        .clk                    (clk),
+        .rst                    (rst),
+        .reg_write_en           (reg_write_en),
+        .reg_write_dest         (reg_write_dest),
+        .reg_write_data         (reg_write_data),
+        .reg_read_addr_1        (reg_read_addr_1),
+        .reg_read_data_1        (reg_read_data_1),
+        .reg_read_addr_2        (reg_read_addr_2),
         .reg_read_data_2        (reg_read_data_2)
     );
-    
+
     hazard_detection_unit hazard_detection_unit_inst (
-        .decoding_op_src1       (decoding_op_src1), 
-        .decoding_op_src2       (decoding_op_src2), 
-        .ex_op_dest             (ex_op_dest), 
-        .mem_op_dest            (mem_op_dest), 
-        .wb_op_dest             (wb_op_dest), 
+        .decoding_op_src1       (decoding_op_src1),
+        .decoding_op_src2       (decoding_op_src2),
+        .ex_op_dest             (ex_op_dest),
+        .mem_op_dest            (mem_op_dest),
+        .wb_op_dest             (wb_op_dest),
         .pipeline_stall_n       (pipeline_stall_n)
     );
-    
+
 endmodule
