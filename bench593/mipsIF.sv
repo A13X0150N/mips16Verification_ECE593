@@ -18,7 +18,7 @@ interface mipsIF();
     logic    [56:0]              ID_pipeline_reg_out;    // ID_stage --> EX_stage
     logic    [37:0]              EX_pipeline_reg_out;    // EX_stage --> MEM_stage
     logic    [36:0]              MEM_pipeline_reg_out;   // MEM_stage --> WB_stage
-    
+
     logic    [2:0]               reg_read_addr_1;        // ID_stage --> register_file
     logic    [2:0]               reg_read_addr_2;        // ID_stage --> register_file
     logic    [15:0]              reg_read_data_1;        // register_file --> ID_stage
@@ -32,14 +32,13 @@ interface mipsIF();
     logic    [2:0]               reg_write_dest;         // WB_stage --> register_file
     logic    [15:0]              reg_write_data;         // WB_stage --> register_file
 
-
-
     task reset();
         rst = 0;
         repeat (10) @(posedge clk);
         rst = 1;
         repeat (10) @(posedge clk);
         rst = 0;
+
     endtask : reset
 
 
