@@ -46,7 +46,7 @@ module top_tb;
     endtask : fill_inst_mem
 
     task fill_data_mem();
-        $readmemh("data.txt", duv.IF_stage_inst.imem.rom)
+        $readmemh("data.txt", duv.MEM_stage_inst.dmem.ram)
     endtask : fill_data_mem
 
     task enable_clock();
