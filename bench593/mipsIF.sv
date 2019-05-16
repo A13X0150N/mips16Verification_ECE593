@@ -4,7 +4,7 @@
 `timescale 1ns/1ps
 `include "../rtl/mips_16_defs.v"
 interface mipsIF();
-
+	import MIPS_pkg::*;
     parameter CLK_PERIOD = 10;
 
     bit                          clk=0;
@@ -34,7 +34,7 @@ interface mipsIF();
     logic    [2:0]               reg_write_dest;         // WB_stage --> register_file
     logic    [15:0]              reg_write_data;         // WB_stage --> register_file
 
-	bit	[3:0] opcode;
+	opcode_t opcode;
 	bit [2:0] rd;
 	bit [2:0] rs1;
 	bit [2:0] rs2;
@@ -42,8 +42,8 @@ interface mipsIF();
 	
 	
     // Drive the clock
-    always #(CLK_PERIOD/2) 
-        clk =~clk;
+    // always #(CLK_PERIOD/2) 
+        // clk =~clk;
 
     task reset();
         rst = 0;

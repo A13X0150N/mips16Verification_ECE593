@@ -1,16 +1,9 @@
-//khensu/Home03/orbegi/Desktop/Final/mips16Verification_ECE593/rtl/data_mem.v {1 {vlog -work work -vopt -stats=none //khensu/Home03/orbegi/Desktop/Final/mips16Verification_ECE593/rtl/data_mem.v
+//khensu/Home03/orbegi/Desktop/Final/mips16Verification_ECE593/rtl/instruction_mem.v {1 {vlog -work work -vopt -stats=none //khensu/Home03/orbegi/Desktop/Final/mips16Verification_ECE593/rtl/instruction_mem.v
 QuestaSim-64 vlog 10.7b Compiler 2018.06 Jun  8 2018
--- Compiling module data_mem
+-- Compiling module instruction_mem
 
 Top level modules:
-	data_mem
-
-} {} {}} //khensu/Home03/orbegi/Desktop/Final/mips16Verification_ECE593/rtl/EX_stage.v {1 {vlog -work work -vopt -stats=none //khensu/Home03/orbegi/Desktop/Final/mips16Verification_ECE593/rtl/EX_stage.v
-QuestaSim-64 vlog 10.7b Compiler 2018.06 Jun  8 2018
--- Compiling module EX_stage
-
-Top level modules:
-	EX_stage
+	instruction_mem
 
 } {} {}} //khensu/Home03/orbegi/Desktop/Final/mips16Verification_ECE593/rtl/ID_stage.v {1 {vlog -work work -vopt -stats=none //khensu/Home03/orbegi/Desktop/Final/mips16Verification_ECE593/rtl/ID_stage.v
 QuestaSim-64 vlog 10.7b Compiler 2018.06 Jun  8 2018
@@ -19,41 +12,19 @@ QuestaSim-64 vlog 10.7b Compiler 2018.06 Jun  8 2018
 Top level modules:
 	ID_stage
 
-} {} {}} //khensu/Home03/orbegi/Desktop/Final/mips16Verification_ECE593/rtl/instruction_mem.v {1 {vlog -work work -vopt -stats=none //khensu/Home03/orbegi/Desktop/Final/mips16Verification_ECE593/rtl/instruction_mem.v
+} {} {}} //khensu/Home03/orbegi/Desktop/Final/mips16Verification_ECE593/rtl/EX_stage.v {1 {vlog -work work -vopt -stats=none //khensu/Home03/orbegi/Desktop/Final/mips16Verification_ECE593/rtl/EX_stage.v
 QuestaSim-64 vlog 10.7b Compiler 2018.06 Jun  8 2018
--- Compiling module instruction_mem
+-- Compiling module EX_stage
 
 Top level modules:
-	instruction_mem
+	EX_stage
 
-} {} {}} //khensu/Home03/orbegi/Desktop/Final/mips16Verification_ECE593/bench593/generator.sv {2 {vlog -work work -vopt -sv -stats=none //khensu/Home03/orbegi/Desktop/Final/mips16Verification_ECE593/bench593/generator.sv
+} {} {}} //khensu/Home03/orbegi/Desktop/Final/mips16Verification_ECE593/rtl/data_mem.v {1 {vlog -work work -vopt -stats=none //khensu/Home03/orbegi/Desktop/Final/mips16Verification_ECE593/rtl/data_mem.v
 QuestaSim-64 vlog 10.7b Compiler 2018.06 Jun  8 2018
--- Compiling module generator
--- Importing package MIPS_pkg
-** Warning: //khensu/Home03/orbegi/Desktop/Final/mips16Verification_ECE593/bench593/generator.sv(136): (vlog-2240) Treating stand-alone use of function 'NOP_gnrt' as an implicit VOID cast.
-** Warning: //khensu/Home03/orbegi/Desktop/Final/mips16Verification_ECE593/bench593/generator.sv(137): (vlog-2240) Treating stand-alone use of function 'ADD_gnrt' as an implicit VOID cast.
-** Warning: //khensu/Home03/orbegi/Desktop/Final/mips16Verification_ECE593/bench593/generator.sv(138): (vlog-2240) Treating stand-alone use of function 'SUB_gnrt' as an implicit VOID cast.
-** Warning: //khensu/Home03/orbegi/Desktop/Final/mips16Verification_ECE593/bench593/generator.sv(139): (vlog-2240) Treating stand-alone use of function 'AND_gnrt' as an implicit VOID cast.
-** Warning: //khensu/Home03/orbegi/Desktop/Final/mips16Verification_ECE593/bench593/generator.sv(140): (vlog-2240) Treating stand-alone use of function 'OR_gnrt' as an implicit VOID cast.
-** Warning: //khensu/Home03/orbegi/Desktop/Final/mips16Verification_ECE593/bench593/generator.sv(141): (vlog-2240) Treating stand-alone use of function 'XOR_gnrt' as an implicit VOID cast.
-** Warning: //khensu/Home03/orbegi/Desktop/Final/mips16Verification_ECE593/bench593/generator.sv(142): (vlog-2240) Treating stand-alone use of function 'SL_gnrt' as an implicit VOID cast.
-** Warning: //khensu/Home03/orbegi/Desktop/Final/mips16Verification_ECE593/bench593/generator.sv(143): (vlog-2240) Treating stand-alone use of function 'SR_gnrt' as an implicit VOID cast.
-** Warning: //khensu/Home03/orbegi/Desktop/Final/mips16Verification_ECE593/bench593/generator.sv(144): (vlog-2240) Treating stand-alone use of function 'SRU_gnrt' as an implicit VOID cast.
-** Warning: //khensu/Home03/orbegi/Desktop/Final/mips16Verification_ECE593/bench593/generator.sv(146): (vlog-2240) Treating stand-alone use of function 'ADDI_gnrt' as an implicit VOID cast.
-** Warning: //khensu/Home03/orbegi/Desktop/Final/mips16Verification_ECE593/bench593/generator.sv(147): (vlog-2240) Treating stand-alone use of function 'LD_gnrt' as an implicit VOID cast.
-** Warning: //khensu/Home03/orbegi/Desktop/Final/mips16Verification_ECE593/bench593/generator.sv(148): (vlog-2240) Treating stand-alone use of function 'ST_gnrt' as an implicit VOID cast.
-** Warning: //khensu/Home03/orbegi/Desktop/Final/mips16Verification_ECE593/bench593/generator.sv(149): (vlog-2240) Treating stand-alone use of function 'BZ_gnrt' as an implicit VOID cast.
-** Warning: //khensu/Home03/orbegi/Desktop/Final/mips16Verification_ECE593/bench593/generator.sv(150): (vlog-2240) Treating stand-alone use of function 'NOP_gnrt' as an implicit VOID cast.
+-- Compiling module data_mem
 
 Top level modules:
-	generator
-
-} {} {}} //khensu/Home03/orbegi/Desktop/Final/mips16Verification_ECE593/rtl/alu.v {1 {vlog -work work -vopt -stats=none //khensu/Home03/orbegi/Desktop/Final/mips16Verification_ECE593/rtl/alu.v
-QuestaSim-64 vlog 10.7b Compiler 2018.06 Jun  8 2018
--- Compiling module alu
-
-Top level modules:
-	alu
+	data_mem
 
 } {} {}} //khensu/Home03/orbegi/Desktop/Final/mips16Verification_ECE593/rtl/IF_stage.v {1 {vlog -work work -vopt -stats=none //khensu/Home03/orbegi/Desktop/Final/mips16Verification_ECE593/rtl/IF_stage.v
 QuestaSim-64 vlog 10.7b Compiler 2018.06 Jun  8 2018
@@ -62,12 +33,12 @@ QuestaSim-64 vlog 10.7b Compiler 2018.06 Jun  8 2018
 Top level modules:
 	IF_stage
 
-} {} {}} //khensu/Home03/orbegi/Desktop/Final/mips16Verification_ECE593/rtl/register_file.v {1 {vlog -work work -vopt -stats=none //khensu/Home03/orbegi/Desktop/Final/mips16Verification_ECE593/rtl/register_file.v
+} {} {}} //khensu/Home03/orbegi/Desktop/Final/mips16Verification_ECE593/rtl/alu.v {1 {vlog -work work -vopt -stats=none //khensu/Home03/orbegi/Desktop/Final/mips16Verification_ECE593/rtl/alu.v
 QuestaSim-64 vlog 10.7b Compiler 2018.06 Jun  8 2018
--- Compiling module register_file
+-- Compiling module alu
 
 Top level modules:
-	register_file
+	alu
 
 } {} {}} //khensu/Home03/orbegi/Desktop/Final/mips16Verification_ECE593/bench593/MIPS_pkg.sv {1 {vlog -work work -vopt -sv -stats=none {\\khensu\Home03\orbegi\Desktop\Final\mips16Verification_ECE593\bench593\MIPS_pkg.sv}
 QuestaSim-64 vlog 10.7b Compiler 2018.06 Jun  8 2018
@@ -75,6 +46,13 @@ QuestaSim-64 vlog 10.7b Compiler 2018.06 Jun  8 2018
 
 Top level modules:
 	--none--
+
+} {} {}} //khensu/Home03/orbegi/Desktop/Final/mips16Verification_ECE593/rtl/register_file.v {1 {vlog -work work -vopt -stats=none //khensu/Home03/orbegi/Desktop/Final/mips16Verification_ECE593/rtl/register_file.v
+QuestaSim-64 vlog 10.7b Compiler 2018.06 Jun  8 2018
+-- Compiling module register_file
+
+Top level modules:
+	register_file
 
 } {} {}} //khensu/Home03/orbegi/Desktop/Final/mips16Verification_ECE593/rtl/hazard_detection_unit.v {1 {vlog -work work -vopt -stats=none //khensu/Home03/orbegi/Desktop/Final/mips16Verification_ECE593/rtl/hazard_detection_unit.v
 QuestaSim-64 vlog 10.7b Compiler 2018.06 Jun  8 2018
@@ -100,6 +78,14 @@ QuestaSim-64 vlog 10.7b Compiler 2018.06 Jun  8 2018
 
 Top level modules:
 	top_tb
+
+} {} {}} //khensu/Home03/orbegi/Desktop/Final/mips16Verification_ECE593/bench593/mipsIF.sv {1 {vlog -work work -vopt -sv -stats=none //khensu/Home03/orbegi/Desktop/Final/mips16Verification_ECE593/bench593/mipsIF.sv
+QuestaSim-64 vlog 10.7b Compiler 2018.06 Jun  8 2018
+-- Compiling interface mipsIF
+-- Importing package MIPS_pkg
+
+Top level modules:
+	--none--
 
 } {} {}} //khensu/Home03/orbegi/Desktop/Final/mips16Verification_ECE593/rtl/MEM_stage.v {1 {vlog -work work -vopt -stats=none //khensu/Home03/orbegi/Desktop/Final/mips16Verification_ECE593/rtl/MEM_stage.v
 QuestaSim-64 vlog 10.7b Compiler 2018.06 Jun  8 2018

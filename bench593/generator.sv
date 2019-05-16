@@ -2,7 +2,7 @@ module generator(mipsIF mif);
 
 	import MIPS_pkg::*;
 
-	bit [2:0] op_code;
+	// bit [2:0] op_code;
 	bit [2:0] rd;
 	bit [2:0] rs1;
 	bit [2:0] rs2;
@@ -126,31 +126,43 @@ module generator(mipsIF mif);
 		mif.zeros = 3'b000;	
 	endfunction : BZ_gnrt
 	
+	int f;
+	int counter;
+	
 	initial begin
-		repeat(100)
-		begin
-			for(int counter=0;counter<16;counter=counter+1)
-			begin
-				case(counter)
+		f = $fopen("instructions.txt","w");
+		
+				$display("%d",counter);
 				// R-Type
-				4'd0: NOP_gnrt();
-				4'd1: ADD_gnrt();
-				4'd2: SUB_gnrt();
-				4'd3: AND_gnrt();
-				4'd4: OR_gnrt();
-				4'd5: XOR_gnrt();
-				4'd6: SL_gnrt();
-				4'd7: SR_gnrt();
-				4'd8: SRU_gnrt();
+				// OR_gnrt();
+				// always@(posedge mif.clk);
+				// ADD_gnrt();
+				// always@(posedge mif.clk);
+				// SUB_gnrt();
+				// always@(posedge mif.clk);
+				// AND_gnrt();
+				// always@(posedge mif.clk);
+				// OR_gnrt();
+				// #10;
+				// XOR_gnrt();
+				// #10;
+				// SL_gnrt();
+				// #10;
+				// SR_gnrt();
+				// #10;
+				// SRU_gnrt();
 				// I-Type
-				4'd9: ADDI_gnrt();
-				4'd10: LD_gnrt();
-				4'd11:ST_gnrt();
-				4'd12:BZ_gnrt();
-				default:NOP_gnrt();
-				endcase
-			end
-		end
+				// ADDI_gnrt();
+				// #10;
+				// LD_gnrt();
+				// #10;
+				// ST_gnrt();
+				// #10;
+				// BZ_gnrt();
+				// #10;
+				$fwrite(f,"%b",{mif.opcode,mif.rd,mif.rs1,mif.rs2,mif.zeros});
+				
+		$fclose(f);
 	end
 
 endmodule

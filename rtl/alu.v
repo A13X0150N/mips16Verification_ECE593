@@ -2,11 +2,11 @@
  * Module: alu
  * Project: mips_16
  * Author: fzy
- * Description: 
+ * Description:
  *     alu implementation
  *
  * Revise history:
- *     
+ *
  ***************************************************/
 `timescale 1ns/1ps
 `include "mips_16_defs.v"
@@ -15,8 +15,8 @@ module alu
     input       [15:0]  a,      // src1
     input       [15:0]  b,      // src2
     input       [2:0]   cmd,    // function sel
-    
-    output  reg [15:0]  r       // result    
+
+    output  reg [15:0]  r       // result
 );
     always @ (*) begin
         case(cmd)
@@ -42,5 +42,5 @@ module alu
                 r = 0;
         endcase
     end
-    
-endmodule 
+
+endmodule

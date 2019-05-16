@@ -2,11 +2,11 @@
  * Module: ID_stage
  * Project: mips_16
  * Author: fzy
- * Description: 
+ * Description:
  *     IR, and instruction decoding
  *
  * Revise history:
- *     
+ *
  ***************************************************/
 `timescale 1ns/1ps
 `include "mips_16_defs.v"
@@ -15,28 +15,28 @@ module ID_stage
 (
     input                   clk,
     input                   rst,
-    input                   instruction_decode_en,  
-    
+    input                   instruction_decode_en,
+
     // to EX_stage
     output  reg [56:0]      pipeline_reg_out,   //  [56:22],35bits: ex_alu_cmd[2:0], ex_alu_src1[15:0], ex_alu_src2[15:0]
                                                 //  [21:5],17bits:  mem_write_en, mem_write_data[15:0]
-                                                //  [4:0],5bits:    write_back_en, write_back_dest[2:0], write_back_result_mux, 
+                                                //  [4:0],5bits:    write_back_en, write_back_dest[2:0], write_back_result_mux,
     // to IF_stage
     input       [15:0]      instruction,
     output      [5:0]       branch_offset_imm,
     output  reg             branch_taken,
-    
+
     // to register file
     output      [2:0]       reg_read_addr_1,    // register file read port 1 address
     output      [2:0]       reg_read_addr_2,    // register file read port 2 address
     input       [15:0]      reg_read_data_1,    // register file read port 1 data
     input       [15:0]      reg_read_data_2,    // register file read port 2 data
-    
+
     // to hazard detection unit
     output      [2:0]       decoding_op_src1,       //source_1 register number
     output      [2:0]       decoding_op_src2        //source_2 register number
 );
-    
+
     /********************** internal wires ***********************************/
     //----------------- Instruction Register signals --------------------//
     reg     [15:0]      instruction_reg;
@@ -45,14 +45,14 @@ module ID_stage
     wire    [2:0]       ir_src1;        //source_1 register number
     wire    [2:0]       ir_src2;        //source_2 register number
     wire    [5:0]       ir_imm;         //immediate number carried by the instruction
-    
+
     //---------------- data path control signals --------------------------//
     // write back stage signals
     reg                 write_back_en;          // S3
     wire    [2:0]       write_back_dest;        // dest
     reg                 write_back_result_mux;  // S1
     // mem stage signals
-    wire                mem_write_en;       
+    wire                mem_write_en;
     wire    [15:0]      mem_write_data;
     // ex stage signals
     reg     [2:0]       ex_alu_cmd;             //S2
@@ -81,14 +81,14 @@ module ID_stage
     assign ir_src1 = instruction_reg[ 8: 6];
     assign ir_src2 = (decoding_op_is_store)? instruction_reg[11: 9] : instruction_reg[ 5: 3];
     assign ir_imm  = instruction_reg[ 5: 0];
-    
+
     /********************** pipeline bubble insertion *********************/
     // if instrcution decode is frozen, insert bubble operations into the pipeline
     assign ir_op_code_with_bubble = ( instruction_decode_en )?  ir_op_code : 0;
-    // if instrcution decode is frozen, force destination reg number to 0, 
+    // if instrcution decode is frozen, force destination reg number to 0,
     // this operation is to prevent pipeline stall.
     assign ir_dest_with_bubble = ( instruction_decode_en )?  ir_dest : 0;
-    
+
     /********************** Data path control logic *********************/
     always @ (*) begin
         if(rst) begin
@@ -200,17 +200,17 @@ module ID_stage
             endcase
         end
     end
-    
+
     assign decoding_op_is_branch = ( ir_op_code == `OP_BZ )? 1 : 0; // S5
     assign decoding_op_is_store = ( ir_op_code == `OP_ST )? 1 : 0;  // S6
-    
+
     /********************** singals to EX_stage *********************/
     assign mem_write_data = reg_read_data_2;
     assign mem_write_en = decoding_op_is_store;
     assign write_back_dest = ir_dest_with_bubble;
     assign ex_alu_src1 = reg_read_data_1;
     assign ex_alu_src2 = (alu_src2_mux)? {{10{ir_imm[5]}},ir_imm} : reg_read_data_2;
-    
+
     always @ (posedge clk or posedge rst) begin
         if(rst) begin
             pipeline_reg_out[56:0] <= 0;
@@ -219,7 +219,7 @@ module ID_stage
             pipeline_reg_out[56:0] <= {
                 ex_alu_cmd[2:0],        // pipeline_reg_out[56:54]  //S2
                 ex_alu_src1[15:0],      // pipeline_reg_out[53:38]
-                ex_alu_src2[15:0],      // pipeline_reg_out[37:22]  
+                ex_alu_src2[15:0],      // pipeline_reg_out[37:22]
                 mem_write_en,           // pipeline_reg_out[21]     //
                 mem_write_data[15:0],   // pipeline_reg_out[20:5]   //
                 write_back_en,          // pipeline_reg_out[4]      //S3
@@ -232,7 +232,7 @@ module ID_stage
     /********************** interface with register file *********************/
     assign reg_read_addr_1 = ir_src1;
     assign reg_read_addr_2 = ir_src2;
-    
+
     /********************** branch signals generate *********************/
     always @ (*) begin
         if(decoding_op_is_branch) begin
@@ -244,7 +244,7 @@ module ID_stage
                         else
                             branch_taken = 0;
                     end
-                    
+
                 default:
                         branch_taken = 0;
             endcase
@@ -254,13 +254,13 @@ module ID_stage
         end
     end
     assign branch_offset_imm = ir_imm;
-    
+
     /********************** to hazard detection unit *********************/
     assign decoding_op_src1 = ir_src1;
     assign decoding_op_src2 = (
                     ir_op_code == `OP_NOP   ||
                     ir_op_code == `OP_ADDI  ||
                     ir_op_code == `OP_LD    ||
-                    ir_op_code == `OP_BZ    
+                    ir_op_code == `OP_BZ
                     ) ? 3'b000 : ir_src2;
 endmodule

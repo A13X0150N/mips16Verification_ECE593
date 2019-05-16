@@ -2,44 +2,44 @@
  * Module: instruction_mem
  * Project: mips_16
  * Author: fzy
- * Description: 
+ * Description:
  *     a rom
  *
  * Revise history:
- *     
+ *
  ***************************************************/
 `timescale 1ns/1ps
 `include "mips_16_defs.v"
- 
+
  // Simulation module
 `ifdef USE_SIMULATION_CODE
 module instruction_mem      // a rtl simulation rom, rom initial code can be found in the testbench
 (
     input                   clk,        // asynchronized!!
     input   [`PC_WIDTH-1:0] pc,
-    
+
     output  [15:0]          instruction
 );
-    
+
     reg [15:0] rom [2**`INSTR_MEM_ADDR_WIDTH-1 : 0];
     wire [`INSTR_MEM_ADDR_WIDTH-1 : 0] rom_addr = pc[`INSTR_MEM_ADDR_WIDTH-1 : 0];
 
     assign instruction = rom[rom_addr];
-    
-endmodule 
+
+endmodule
 `endif
 
 
 // Synthesis module
-`ifndef USE_SIMULATION_CODE     
+`ifndef USE_SIMULATION_CODE
 module instruction_mem      // a synthesisable rom implementation
 (
     input                   clk,        // asynchronized!!
     input   [`PC_WIDTH-1:0] pc,
-    
+
     output reg  [15:0]      instruction
 );
-    
+
     wire [`INSTR_MEM_ADDR_WIDTH-1 : 0] rom_addr = pc[`INSTR_MEM_ADDR_WIDTH-1 : 0];
 
     always @(*)
@@ -62,6 +62,6 @@ module instruction_mem      // a synthesisable rom implementation
             4'b1111: instruction = 16'b0000000000000000;
             default: instruction = 16'b0000000000000000;
      endcase
-    
-endmodule 
+
+endmodule
 `endif
