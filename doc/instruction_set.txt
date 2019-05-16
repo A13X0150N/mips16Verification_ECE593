@@ -3,7 +3,7 @@ My mips_16 instrction set:
 R-type:
 		|	15:12		11:9	8:6		5:3	2:0
 	-------------------------------------------
-	NOP	|	0000		rd(0)	rs1(0)	rs2(0)000 
+	NOP	|	0000		rd(0)		rs1(0)		rs2(0)	000 
 	ADD	|	0001		rd		rs1		rs2	000 
 	SUB	|	0010		rd		rs1		rs2	000 
 	AND	|	0011		rd		rs1		rs2	000 
@@ -17,10 +17,10 @@ R-type:
 I-type:	
 		|	15:12		11:9	8:6		5:3	2:0
 	-------------------------------------------
-	ADDI|	1001		rd		rs1 	imm 
+	ADDI	|	1001		rd		rs1 	imm 
 	LD	|	1010		rd		base 	offset 
-	ST	|	1011		rd(rs)	base 	offset 
-	BZ	|	1100		000		rs1		offset 
+	ST	|	1011		rd(rs)		base 	offset 
+	BZ	|	1100		000		rs1	offset 
 //	BGT	|	1100		001		rs1 	offset 
 //	BLE	|	1100		010		rs1 	offset 
 	

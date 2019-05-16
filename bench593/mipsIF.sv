@@ -34,6 +34,13 @@ interface mipsIF();
     logic    [2:0]               reg_write_dest;         // WB_stage --> register_file
     logic    [15:0]              reg_write_data;         // WB_stage --> register_file
 
+	bit	[3:0] opcode;
+	bit [2:0] rd;
+	bit [2:0] rs1;
+	bit [2:0] rs2;
+	bit [2:0] zeros;
+	
+	
     // Drive the clock
     always #(CLK_PERIOD/2) 
         clk =~clk;

@@ -4,9 +4,12 @@
 `timescale 1ns/1ps
 `include "../rtl/mips_16_defs.v"
 module top_tb;
-
+	import MIPS_pkg::*;
     // Instantiate the interface for the design
-    mipsIF mif();
+    mipsIF 		mif();
+	generator	generator_i	(mif);
+	
+	
     
     // Instantiate the DUV
     mips_16_core_top duv (
