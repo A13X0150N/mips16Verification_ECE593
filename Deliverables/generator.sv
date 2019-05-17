@@ -9,6 +9,8 @@
 // 	Description: Generator generates instructions to fill the instruction memory of the processor
 //////////////////////////////////////////////////////////////////////////
 `timescale 1ns/1ps
+//`include "MIPS_pkg.sv"
+
 import MIPS_pkg::*;
 	
 class generator;
@@ -147,7 +149,7 @@ class generator;
 	// Generates testfile
 	task generateTestFile();
 		$display("into the display");
-		f = $fopen("N:/instructions.txt","w");
+		f = $fopen("instructions.txt","w");
 		// f = $fopen("\\khensu\Home03\orbegi\Desktop\Final\mips16Verification_ECE593\instructions.txt","w");
 		repeat(1000)
 		begin

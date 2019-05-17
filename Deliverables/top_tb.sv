@@ -32,7 +32,7 @@ module top_tb;
     );
 
     task fill_inst_mem();
-        $readmemb("N:/instructions.txt", duv.IF_stage_inst.imem.rom);
+        $readmemb("instructions.txt", duv.IF_stage_inst.imem.rom);
     endtask : fill_inst_mem
 
     // task fill_data_mem();
@@ -56,14 +56,14 @@ module top_tb;
 	
 	initial
 	begin
-		// disable_clock();
-		generator	generator_i;
-		generator_i =  new();
+		generator generator_i;
+		generator_i = new();
 		generator_i.generateTestFile();
 		fill_inst_mem();
 		enable_clock(); // after writing instructions into the instruction memory, enable the clock generator
 		mif.reset();
 		// loadRandomRegisterValues();
+        #100000 $stop;
 	end
 
 endmodule

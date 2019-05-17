@@ -1,5 +1,5 @@
-`include "mipsIF.sv"
-`include "generator.sv"
+//`include "mipsIF.sv"
+//`include "generator.sv"
 
 package MIPS_pkg;
       	// typedef enum logic[3:0] {

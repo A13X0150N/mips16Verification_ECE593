@@ -10,6 +10,7 @@
 //////////////////////////////////////////////////////////////////////////
 `timescale 1ns/1ps
 `include "../rtl/mips_16_defs.v"
+//`include "MIPS_pkg.sv"
 interface mipsIF();
 	import MIPS_pkg::*;
     parameter CLK_PERIOD = 10;
