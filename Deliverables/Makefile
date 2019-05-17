@@ -1,5 +1,6 @@
 full:
 	vlib work
+	vlog MIPS_pkg.sv
 	vlog ./*.sv
 	vlog ./*.v
 	vsim -c top_tb -do "run -all; quit"
