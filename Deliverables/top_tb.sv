@@ -1,6 +1,14 @@
-////////////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////
+// 	CSM_tb.sv
+//	ECE 593 - Fundamentals of Pressilicon Validation
+//	Alex Olson
+//	Nurettin Can Orbegi
+//	Matty Baba Allos
+//	Final Project - Deterministic Testbench Design
+// 	----------------------------------------------------
+// 	Description: Deterministic testbench design to show DUV is working
+//////////////////////////////////////////////////////////////////////////
 
-////////////////////////////////////////////////////////////////////////////////
 `timescale 1ns/1ps
 `include "../rtl/mips_16_defs.v"
 `include "generator.sv"
@@ -53,7 +61,7 @@ module top_tb;
 		generator_i =  new();
 		generator_i.generateTestFile();
 		fill_inst_mem();
-		enable_clock();
+		enable_clock(); // after writing instructions into the instruction memory, enable the clock generator
 		mif.reset();
 		// loadRandomRegisterValues();
 	end

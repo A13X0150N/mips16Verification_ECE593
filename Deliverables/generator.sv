@@ -1,3 +1,13 @@
+//////////////////////////////////////////////////////////////////////////
+// 	CSM_tb.sv
+//	ECE 593 - Fundamentals of Pressilicon Validation
+//	Alex Olson
+//	Nurettin Can Orbegi
+//	Matty Baba Allos
+//	Final Project - Generator for all possible operations
+// 	----------------------------------------------------
+// 	Description: Generator generates instructions to fill the instruction memory of the processor
+//////////////////////////////////////////////////////////////////////////
 `timescale 1ns/1ps
 import MIPS_pkg::*;
 	
@@ -134,6 +144,7 @@ class generator;
 	
 	int f;
 	
+	// Generates testfile
 	task generateTestFile();
 		$display("into the display");
 		f = $fopen("N:/instructions.txt","w");
