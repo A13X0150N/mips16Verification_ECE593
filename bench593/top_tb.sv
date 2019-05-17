@@ -10,14 +10,11 @@ module top_tb;
     mipsIF mif();
 
     parameter CLK_PERIOD = 10;
-    bit clk_en = 1;
+    bit clk_en = 0;
 
     // Drive the clock
     always #(CLK_PERIOD/2)
         mif.clk = clk_en ?  ~mif.clk : mif.clk;
-
-    // mipsIF 		mif();
-	
 
     // Instantiate the DUV
     mips_16_core_top duv (
@@ -44,10 +41,12 @@ module top_tb;
 	
 	initial
 	begin
+		// disable_clock();
 		generator	generator_i;
 		generator_i =  new();
 		generator_i.generateTestFile();
 		fill_inst_mem();
+		enable_clock();
 		mif.reset();
 	end
 

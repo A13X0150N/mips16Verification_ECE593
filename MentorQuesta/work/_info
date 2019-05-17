@@ -9,16 +9,16 @@ z2
 cModel Technology
 d//khensu/Home03/orbegi/Desktop/ECE593/QuestaSim
 T_opt
-!s110 1558065137
-VOQUdF86U[R2B6hHS:?d3L2
+!s110 1558065752
+VhfNegK4Xz5YTgHZKhHAb43
 04 6 4 work top_tb fast 0
-=8-00101896bdb8-5cde2ff0-319-3eb0
+=9-00101896bdb8-5cde3258-6a-3eb0
 o-quiet -auto_acc_if_foreign -work work +acc
 Z0 tCvgOpt 0
 n@_opt
 OL;O;10.7b;67
 valu
-Z1 !s110 1558065130
+Z1 !s110 1558065747
 !i10b 1
 !s100 PaKkIBWfI_Z;nd>Rz6QA[0
 I2XH4cIQ>AI:Bz9j694FRz0
@@ -32,7 +32,7 @@ Z6 OL;L;10.7b;67
 r1
 !s85 0
 31
-Z7 !s108 1558065130.000000
+Z7 !s108 1558065747.000000
 !s107 \\khensu\Home03\orbegi\Desktop\Final\mips16Verification_ECE593\rtl\mips_16_defs.v|//khensu/Home03/orbegi/Desktop/Final/mips16Verification_ECE593/rtl/alu.v|
 !s90 -reportprogress|300|-work|work|-vopt|-stats=none|//khensu/Home03/orbegi/Desktop/Final/mips16Verification_ECE593/rtl/alu.v|
 !i113 0
@@ -109,7 +109,7 @@ R0
 Xgenerator_sv_unit
 R10
 Z16 DXx4 work 8 MIPS_pkg 0 22 _08?UE_OOG2oKhUmV:NUI1
-!s110 1558065129
+Z17 !s110 1558065746
 !i10b 1
 !s100 2SH4hV?9<Dz]Gj7G1YIR_2
 IiIN1G5h<j`:4EYAhBP[021
@@ -117,7 +117,7 @@ ViIN1G5h<j`:4EYAhBP[021
 !i103 1
 S1
 R3
-Z17 w1558063986
+Z18 w1558063986
 R11
 R12
 L0 1
@@ -125,14 +125,14 @@ R6
 r1
 !s85 0
 31
-Z18 !s108 1558065129.000000
+Z19 !s108 1558065746.000000
 R13
 R14
 !i113 0
 R15
 R0
 vhazard_detection_unit
-Z19 !s110 1558065131
+R1
 !i10b 1
 !s100 0B43l2A?Ol@YDe6Aol@b?2
 IBlVI5J4H>QnB4^S;DL_:a2
@@ -146,14 +146,14 @@ R6
 r1
 !s85 0
 31
-Z20 !s108 1558065131.000000
+R7
 !s107 //khensu/Home03/orbegi/Desktop/Final/mips16Verification_ECE593/rtl/hazard_detection_unit.v|
 !s90 -reportprogress|300|-work|work|-vopt|-stats=none|//khensu/Home03/orbegi/Desktop/Final/mips16Verification_ECE593/rtl/hazard_detection_unit.v|
 !i113 0
 R8
 R0
 vID_stage
-R19
+R1
 !i10b 1
 !s100 EeZ1j]kZhY;;iSko64TiJ0
 IbIPXc?aJ@Cg:oCi0V^Ih23
@@ -167,7 +167,7 @@ R6
 r1
 !s85 0
 31
-R20
+R7
 !s107 \\khensu\Home03\orbegi\Desktop\Final\mips16Verification_ECE593\rtl\mips_16_defs.v|//khensu/Home03/orbegi/Desktop/Final/mips16Verification_ECE593/rtl/ID_stage.v|
 !s90 -reportprogress|300|-work|work|-vopt|-stats=none|//khensu/Home03/orbegi/Desktop/Final/mips16Verification_ECE593/rtl/ID_stage.v|
 !i113 0
@@ -175,7 +175,7 @@ R8
 R0
 n@i@d_stage
 vIF_stage
-R19
+Z20 !s110 1558065748
 !i10b 1
 !s100 =E=`a3IoeaB]?:5^e9YM[2
 IzlPmkSna66iNgJ4]Gj[XC3
@@ -189,7 +189,7 @@ R6
 r1
 !s85 0
 31
-R20
+R7
 !s107 \\khensu\Home03\orbegi\Desktop\Final\mips16Verification_ECE593\rtl\mips_16_defs.v|//khensu/Home03/orbegi/Desktop/Final/mips16Verification_ECE593/rtl/IF_stage.v|
 !s90 -reportprogress|300|-work|work|-vopt|-stats=none|//khensu/Home03/orbegi/Desktop/Final/mips16Verification_ECE593/rtl/IF_stage.v|
 !i113 0
@@ -197,7 +197,7 @@ R8
 R0
 n@i@f_stage
 vinstruction_mem
-R19
+R20
 !i10b 1
 !s100 14[BmiEQn<1NPi9A^eU?^2
 IF[20[4N9@66QgT1L28bEC1
@@ -211,14 +211,14 @@ R6
 r1
 !s85 0
 31
-R20
+Z21 !s108 1558065748.000000
 !s107 \\khensu\Home03\orbegi\Desktop\Final\mips16Verification_ECE593\rtl\mips_16_defs.v|//khensu/Home03/orbegi/Desktop/Final/mips16Verification_ECE593/rtl/instruction_mem.v|
 !s90 -reportprogress|300|-work|work|-vopt|-stats=none|//khensu/Home03/orbegi/Desktop/Final/mips16Verification_ECE593/rtl/instruction_mem.v|
 !i113 0
 R8
 R0
 vMEM_stage
-R19
+R20
 !i10b 1
 !s100 UY^RMW9OiTaLGlDDbb1=N3
 I55W7n`J<hjf?dj>AfTjRa3
@@ -232,7 +232,7 @@ R6
 r1
 !s85 0
 31
-R20
+R21
 !s107 \\khensu\Home03\orbegi\Desktop\Final\mips16Verification_ECE593\rtl\mips_16_defs.v|//khensu/Home03/orbegi/Desktop/Final/mips16Verification_ECE593/rtl/MEM_stage.v|
 !s90 -reportprogress|300|-work|work|-vopt|-stats=none|//khensu/Home03/orbegi/Desktop/Final/mips16Verification_ECE593/rtl/MEM_stage.v|
 !i113 0
@@ -240,7 +240,7 @@ R8
 R0
 n@m@e@m_stage
 vmips_16_core_top
-Z21 !s110 1558065132
+R20
 !i10b 1
 !s100 _>8MO[9H:PTVP?CeH1AYK1
 IQHB0HKQENbgW4JM64J^Ce2
@@ -254,7 +254,7 @@ R6
 r1
 !s85 0
 31
-R20
+R21
 !s107 \\khensu\Home03\orbegi\Desktop\Final\mips16Verification_ECE593\rtl\mips_16_defs.v|//khensu/Home03/orbegi/Desktop/Final/mips16Verification_ECE593/rtl/mips_16_core_top.v|
 !s90 -reportprogress|300|-work|work|-vopt|-stats=none|//khensu/Home03/orbegi/Desktop/Final/mips16Verification_ECE593/rtl/mips_16_core_top.v|
 !i113 0
@@ -277,7 +277,7 @@ Z24 F//khensu/Home03/orbegi/Desktop/Final/mips16Verification_ECE593/bench593/MIP
 L0 4
 R6
 31
-R18
+R19
 Z25 !s107 \\khensu\Home03\orbegi\Desktop\Final\mips16Verification_ECE593\bench593\generator.sv|../rtl/mips_16_defs.v|\\khensu\Home03\orbegi\Desktop\Final\mips16Verification_ECE593\bench593\mipsIF.sv|//khensu/Home03/orbegi/Desktop/Final/mips16Verification_ECE593/bench593/MIPS_pkg.sv|
 Z26 !s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|//khensu/Home03/orbegi/Desktop/Final/mips16Verification_ECE593/bench593/MIPS_pkg.sv|
 !i113 0
@@ -297,7 +297,7 @@ I;j;b>do>kT<ag<e<o;I<j0
 !i103 1
 S1
 R3
-R17
+R18
 R23
 R24
 F\\khensu\Home03\orbegi\Desktop\Final\mips16Verification_ECE593\bench593\mipsIF.sv
@@ -306,7 +306,7 @@ Z28 F\\khensu\Home03\orbegi\Desktop\Final\mips16Verification_ECE593\bench593\gen
 L0 1
 R6
 31
-R18
+R19
 R25
 R26
 !i113 0
@@ -316,7 +316,7 @@ n@m@i@p@s_pkg_sv_unit
 YmipsIF
 R10
 R16
-R1
+R17
 !i10b 1
 !s100 =PCzZI_5a6FQ^D1HSV60@1
 I9YIKa[RM58mA]>8WS;J^:2
@@ -332,7 +332,7 @@ R6
 r1
 !s85 0
 31
-R7
+R19
 !s107 ../rtl/mips_16_defs.v|//khensu/Home03/orbegi/Desktop/Final/mips16Verification_ECE593/bench593/mipsIF.sv|
 !s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|//khensu/Home03/orbegi/Desktop/Final/mips16Verification_ECE593/bench593/mipsIF.sv|
 !i113 0
@@ -340,7 +340,7 @@ R15
 R0
 nmips@i@f
 vregister_file
-R21
+R20
 !i10b 1
 !s100 ]5CIm?@^mN9jd0V`5nG_f0
 IXXB48D=Je6@SCMXMGfhkW3
@@ -354,7 +354,7 @@ R6
 r1
 !s85 0
 31
-Z29 !s108 1558065132.000000
+R21
 !s107 \\khensu\Home03\orbegi\Desktop\Final\mips16Verification_ECE593\rtl\mips_16_defs.v|//khensu/Home03/orbegi/Desktop/Final/mips16Verification_ECE593/rtl/register_file.v|
 !s90 -reportprogress|300|-work|work|-vopt|-stats=none|//khensu/Home03/orbegi/Desktop/Final/mips16Verification_ECE593/rtl/register_file.v|
 !i113 0
@@ -363,58 +363,58 @@ R0
 vtop_tb
 R10
 R16
-DXx4 work 14 top_tb_sv_unit 0 22 d`bijoiVbzAZR;>YQmHI<0
+DXx4 work 14 top_tb_sv_unit 0 22 jEkHF4e`4if>`Zg>dU:753
 R2
 r1
 !s85 0
 31
 !i10b 1
-!s100 Uhz6z4PLfFA4eOVhbENln3
-I:NWgo@d27IiV?fkma^3V[2
+!s100 PN7P3SNG_:l8Z:^RKcc]z0
+IkIH871D``E4OGF_:YfzZE0
 !s105 top_tb_sv_unit
 S1
 R3
-Z30 w1558065122
-Z31 8//khensu/Home03/orbegi/Desktop/Final/mips16Verification_ECE593/bench593/top_tb.sv
-Z32 F//khensu/Home03/orbegi/Desktop/Final/mips16Verification_ECE593/bench593/top_tb.sv
+Z29 w1558065737
+Z30 8//khensu/Home03/orbegi/Desktop/Final/mips16Verification_ECE593/bench593/top_tb.sv
+Z31 F//khensu/Home03/orbegi/Desktop/Final/mips16Verification_ECE593/bench593/top_tb.sv
 L0 7
 R6
 31
-R7
-Z33 !s107 \\khensu\Home03\orbegi\Desktop\Final\mips16Verification_ECE593\bench593\generator.sv|../rtl/mips_16_defs.v|//khensu/Home03/orbegi/Desktop/Final/mips16Verification_ECE593/bench593/top_tb.sv|
-Z34 !s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|//khensu/Home03/orbegi/Desktop/Final/mips16Verification_ECE593/bench593/top_tb.sv|
+R19
+Z32 !s107 \\khensu\Home03\orbegi\Desktop\Final\mips16Verification_ECE593\bench593\generator.sv|../rtl/mips_16_defs.v|//khensu/Home03/orbegi/Desktop/Final/mips16Verification_ECE593/bench593/top_tb.sv|
+Z33 !s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|//khensu/Home03/orbegi/Desktop/Final/mips16Verification_ECE593/bench593/top_tb.sv|
 !i113 0
 R15
 R0
 Xtop_tb_sv_unit
 R10
 R16
-Vd`bijoiVbzAZR;>YQmHI<0
+VjEkHF4e`4if>`Zg>dU:753
 r1
 !s85 0
 31
 !i10b 1
-!s100 VaMjI>ffiAC7cA]WBb2b:2
-Id`bijoiVbzAZR;>YQmHI<0
+!s100 a`F[LCX[VHJ6ZR>dKVSYi1
+IjEkHF4e`4if>`Zg>dU:753
 !i103 1
 S1
 R3
+R29
 R30
 R31
-R32
 R27
 R28
 L0 1
 R6
 31
-R7
+R19
+R32
 R33
-R34
 !i113 0
 R15
 R0
 vWB_stage
-R21
+!s110 1558065749
 !i10b 1
 !s100 lPc]WNcLjbjzhz?QiJS_80
 I8E3iLhKR;dPW:7:nYd9bU0
@@ -428,7 +428,7 @@ R6
 r1
 !s85 0
 31
-R29
+!s108 1558065749.000000
 !s107 \\khensu\Home03\orbegi\Desktop\Final\mips16Verification_ECE593\rtl\mips_16_defs.v|//khensu/Home03/orbegi/Desktop/Final/mips16Verification_ECE593/rtl/WB_stage.v|
 !s90 -reportprogress|300|-work|work|-vopt|-stats=none|//khensu/Home03/orbegi/Desktop/Final/mips16Verification_ECE593/rtl/WB_stage.v|
 !i113 0
