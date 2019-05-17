@@ -1,3 +1,6 @@
+`include "mipsIF.sv"
+`include "generator.sv"
+
 package MIPS_pkg;
       	// typedef enum logic[3:0] {
 					// NOP = 4'b0000,

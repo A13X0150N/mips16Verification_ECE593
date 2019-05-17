@@ -3,6 +3,7 @@
 ////////////////////////////////////////////////////////////////////////////////
 `timescale 1ns/1ps
 `include "../rtl/mips_16_defs.v"
+`include "generator.sv"
 module top_tb;
 	import MIPS_pkg::*;
     // Instantiate the interface for the design
@@ -16,7 +17,7 @@ module top_tb;
         mif.clk = clk_en ?  ~mif.clk : mif.clk;
 
     // mipsIF 		mif();
-	generator	generator_i	(mif);	
+	
 
     // Instantiate the DUV
     mips_16_core_top duv (
@@ -26,11 +27,11 @@ module top_tb;
     );
 
     task fill_inst_mem();
-        $readmemh("instructions.txt", duv.IF_stage_inst.imem.rom);
+        $readmemb("N:/instructions.txt", duv.IF_stage_inst.imem.rom);
     endtask : fill_inst_mem
 
     task fill_data_mem();
-        $readmemh("data.txt", duv.MEM_stage_inst.dmem.ram);
+        $readmemb("data.txt", duv.MEM_stage_inst.dmem.ram);
     endtask : fill_data_mem
 
     task enable_clock();
@@ -40,5 +41,14 @@ module top_tb;
     task disable_clock();
         clk_en = 0;
     endtask : disable_clock
+	
+	initial
+	begin
+		generator	generator_i;
+		generator_i =  new();
+		generator_i.generateTestFile();
+		fill_inst_mem();
+		mif.reset();
+	end
 
 endmodule

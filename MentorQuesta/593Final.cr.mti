@@ -26,6 +26,12 @@ QuestaSim-64 vlog 10.7b Compiler 2018.06 Jun  8 2018
 Top level modules:
 	data_mem
 
+} {} {}} //khensu/Home03/orbegi/Desktop/Final/mips16Verification_ECE593/bench593/generator.sv {1 {vlog -work work -vopt -sv -stats=none //khensu/Home03/orbegi/Desktop/Final/mips16Verification_ECE593/bench593/generator.sv
+QuestaSim-64 vlog 10.7b Compiler 2018.06 Jun  8 2018
+
+Top level modules:
+	--none--
+
 } {} {}} //khensu/Home03/orbegi/Desktop/Final/mips16Verification_ECE593/rtl/IF_stage.v {1 {vlog -work work -vopt -stats=none //khensu/Home03/orbegi/Desktop/Final/mips16Verification_ECE593/rtl/IF_stage.v
 QuestaSim-64 vlog 10.7b Compiler 2018.06 Jun  8 2018
 -- Compiling module IF_stage
@@ -40,8 +46,12 @@ QuestaSim-64 vlog 10.7b Compiler 2018.06 Jun  8 2018
 Top level modules:
 	alu
 
-} {} {}} //khensu/Home03/orbegi/Desktop/Final/mips16Verification_ECE593/bench593/MIPS_pkg.sv {1 {vlog -work work -vopt -sv -stats=none {\\khensu\Home03\orbegi\Desktop\Final\mips16Verification_ECE593\bench593\MIPS_pkg.sv}
+} {} {}} //khensu/Home03/orbegi/Desktop/Final/mips16Verification_ECE593/bench593/MIPS_pkg.sv {1 {vlog -work work -vopt -sv -stats=none //khensu/Home03/orbegi/Desktop/Final/mips16Verification_ECE593/bench593/MIPS_pkg.sv
 QuestaSim-64 vlog 10.7b Compiler 2018.06 Jun  8 2018
+-- Compiling interface mipsIF
+-- Importing package MIPS_pkg
+-- Compiling package MIPS_pkg_sv_unit
+-- Importing package MIPS_pkg
 -- Compiling package MIPS_pkg
 
 Top level modules:
@@ -70,14 +80,6 @@ QuestaSim-64 vlog 10.7b Compiler 2018.06 Jun  8 2018
 
 Top level modules:
 	mips_16_core_top
-
-} {} {}} //khensu/Home03/orbegi/Desktop/Final/mips16Verification_ECE593/bench593/top_tb.sv {1 {vlog -work work -vopt -sv -stats=none //khensu/Home03/orbegi/Desktop/Final/mips16Verification_ECE593/bench593/top_tb.sv
-QuestaSim-64 vlog 10.7b Compiler 2018.06 Jun  8 2018
--- Compiling module top_tb
--- Importing package MIPS_pkg
-
-Top level modules:
-	top_tb
 
 } {} {}} //khensu/Home03/orbegi/Desktop/Final/mips16Verification_ECE593/bench593/mipsIF.sv {1 {vlog -work work -vopt -sv -stats=none //khensu/Home03/orbegi/Desktop/Final/mips16Verification_ECE593/bench593/mipsIF.sv
 QuestaSim-64 vlog 10.7b Compiler 2018.06 Jun  8 2018
