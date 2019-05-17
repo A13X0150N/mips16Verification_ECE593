@@ -1,8 +1,13 @@
-module generator(mipsIF mif);
+import MIPS_pkg::*;
+	
+class generator;
+	
+	function new();
+		
+	endfunction
+	
 
-	import MIPS_pkg::*;
-
-	bit [2:0] op_code;
+	opcode_t opcode;
 	bit [2:0] rd;
 	bit [2:0] rs1;
 	bit [2:0] rs2;
@@ -21,136 +26,150 @@ module generator(mipsIF mif);
 	endfunction
 
 	// R-Type Instructions
-	function NOP_gnrt();
-		mif.opcode = NOP;
-		mif.rd = REG_gnrt();
-		mif.rs1 = REG_gnrt();
-		mif.rs2 = REG_gnrt();
-		mif.zeros = 3'b000;
-	endfunction :NOP_gnrt
+	task NOP_gnrt();
+		 opcode = NOP;
+		 rd = REG_gnrt();
+		 rs1 = REG_gnrt();
+		 rs2 = REG_gnrt();
+		 zeros = 3'b000;
+	endtask :NOP_gnrt
 
-	function ADD_gnrt();
-		mif.opcode = ADD;
-		mif.rd = REG_gnrt();
-		mif.rs1 = REG_gnrt();
-		mif.rs2 = REG_gnrt();
-		mif.zeros = 3'b000;
-	endfunction :ADD_gnrt
+	task ADD_gnrt();
+		 opcode = ADD;
+		 rd = REG_gnrt();
+		 rs1 = REG_gnrt();
+		 rs2 = REG_gnrt();
+		 zeros = 3'b000;
+	endtask :ADD_gnrt
 
-	function SUB_gnrt();
-		mif.opcode = SUB;
-		mif.rd = REG_gnrt();
-		mif.rs1 = REG_gnrt();
-		mif.rs2 = REG_gnrt();
-		mif.zeros = 3'b000;
-	endfunction:SUB_gnrt
+	task SUB_gnrt();
+		 opcode = SUB;
+		 rd = REG_gnrt();
+		 rs1 = REG_gnrt();
+		 rs2 = REG_gnrt();
+		 zeros = 3'b000;
+	endtask:SUB_gnrt
 
-	function AND_gnrt();
-		mif.opcode = AND;
-		mif.rd = REG_gnrt();
-		mif.rs1 = REG_gnrt();
-		mif.rs2 = REG_gnrt();
-		mif.zeros = 3'b000;
-	endfunction:AND_gnrt
+	task AND_gnrt();
+		 opcode = AND;
+		 rd = REG_gnrt();
+		 rs1 = REG_gnrt();
+		 rs2 = REG_gnrt();
+		 zeros = 3'b000;
+	endtask:AND_gnrt
 
-	function OR_gnrt();
-		mif.opcode = OR;
-		mif.rd = REG_gnrt();
-		mif.rs1 = REG_gnrt();
-		mif.rs2 = REG_gnrt();
-		mif.zeros = 3'b000;
-	endfunction:OR_gnrt
+	task OR_gnrt();
+		 opcode = OR;
+		 rd = REG_gnrt();
+		 rs1 = REG_gnrt();
+		 rs2 = REG_gnrt();
+		 zeros = 3'b000;
+	endtask:OR_gnrt
 
-	function XOR_gnrt();
-		mif.opcode = XOR;
-		mif.rd = REG_gnrt();
-		mif.rs1 = REG_gnrt();
-		mif.rs2 = REG_gnrt();
-		mif.zeros = 3'b000;
-	endfunction:XOR_gnrt
+	task XOR_gnrt();
+		 opcode = XOR;
+		 rd = REG_gnrt();
+		 rs1 = REG_gnrt();
+		 rs2 = REG_gnrt();
+		 zeros = 3'b000;
+	endtask:XOR_gnrt
 
-	function SL_gnrt();
-		mif.opcode = SL;
-		mif.rd = REG_gnrt();
-		mif.rs1 = REG_gnrt();
-		mif.rs2 = REG_gnrt();
-		mif.zeros = 3'b000;
-	endfunction:SL_gnrt
+	task SL_gnrt();
+		 opcode = SL;
+		 rd = REG_gnrt();
+		 rs1 = REG_gnrt();
+		 rs2 = REG_gnrt();
+		 zeros = 3'b000;
+	endtask:SL_gnrt
 
-	function SR_gnrt();
-		mif.opcode = SR;
-		mif.rd = REG_gnrt();
-		mif.rs1 = REG_gnrt();
-		mif.rs2 = REG_gnrt();
-		mif.zeros = 3'b000;
-	endfunction:SR_gnrt
+	task SR_gnrt();
+		 opcode = SR;
+		 rd = REG_gnrt();
+		 rs1 = REG_gnrt();
+		 rs2 = REG_gnrt();
+		 zeros = 3'b000;
+	endtask:SR_gnrt
 
-	function SRU_gnrt();
-		mif.opcode = SRU;
-		mif.rd = REG_gnrt();
-		mif.rs1 = REG_gnrt();
-		mif.rs2 = REG_gnrt();
-		mif.zeros = 3'b000;
-	endfunction:SRU_gnrt
+	task SRU_gnrt();
+		 opcode = SRU;
+		 rd = REG_gnrt();
+		 rs1 = REG_gnrt();
+		 rs2 = REG_gnrt();
+		 zeros = 3'b000;
+	endtask:SRU_gnrt
 
 	// I-Type Instructions
-	function ADDI_gnrt();
-		mif.opcode = ADDI;
-		mif.rd = REG_gnrt();
-		mif.rs1 = REG_gnrt();
-		mif.rs2 = IMM_gnrt();
-		mif.zeros = 3'b000;
-	endfunction : ADDI_gnrt
+	task ADDI_gnrt();
+		 opcode = ADDI;
+		 rd = REG_gnrt();
+		 rs1 = REG_gnrt();
+		 rs2 = IMM_gnrt();
+		 zeros = 3'b000;
+	endtask : ADDI_gnrt
 	
-	function LD_gnrt();
-		mif.opcode = LD;
-		mif.rd = REG_gnrt();	
-		mif.rs1 = IMM_gnrt(); // Base address
-		mif.rs2 = IMM_gnrt(); // Offset
-		mif.zeros = 3'b000;	
-	endfunction : LD_gnrt
+	task LD_gnrt();
+		 opcode = LD;
+		 rd = REG_gnrt();	
+		 rs1 = IMM_gnrt(); // Base address
+		 rs2 = IMM_gnrt(); // Offset
+		 zeros = 3'b000;	
+	endtask : LD_gnrt
 	
-	function ST_gnrt();
-		mif.opcode = ST;
-		mif.rd = REG_gnrt();	
-		mif.rs1 = IMM_gnrt(); // Base address
-		mif.rs2 = IMM_gnrt(); // Offset
-		mif.zeros = 3'b000;	
-	endfunction : ST_gnrt 
+	task ST_gnrt();
+		 opcode = ST;
+		 rd = REG_gnrt();	
+		 rs1 = IMM_gnrt(); // Base address
+		 rs2 = IMM_gnrt(); // Offset
+		 zeros = 3'b000;	
+	endtask : ST_gnrt 
 	
-	function BZ_gnrt();
-		mif.opcode = ST;
-		mif.rd = 3'b000;
-		mif.rs1 = REG_gnrt();
-		mif.rs2 = IMM_gnrt(); // Offset
-		mif.zeros = 3'b000;	
-	endfunction : BZ_gnrt
+	task BZ_gnrt();
+		 opcode = ST;
+		 rd = 3'b000;
+		 rs1 = REG_gnrt();
+		 rs2 = IMM_gnrt(); // Offset
+		 zeros = 3'b000;	
+	endtask : BZ_gnrt
 	
-	initial begin
-		repeat(100)
+	int f;
+	
+	task generateTestFile();
+		$display("into the display");
+		f = $fopen("N:/instructions.txt","w");
+		// f = $fopen("\\khensu\Home03\orbegi\Desktop\Final\mips16Verification_ECE593\instructions.txt","w");
+		repeat(1000)
 		begin
-			for(int counter=0;counter<16;counter=counter+1)
-			begin
-				case(counter)
-				// R-Type
-				4'd0: NOP_gnrt();
-				4'd1: ADD_gnrt();
-				4'd2: SUB_gnrt();
-				4'd3: AND_gnrt();
-				4'd4: OR_gnrt();
-				4'd5: XOR_gnrt();
-				4'd6: SL_gnrt();
-				4'd7: SR_gnrt();
-				4'd8: SRU_gnrt();
-				// I-Type
-				4'd9: ADDI_gnrt();
-				4'd10: LD_gnrt();
-				4'd11:ST_gnrt();
-				4'd12:BZ_gnrt();
-				default:NOP_gnrt();
-				endcase
-			end
-		end
-	end
+			// R-Type
+			OR_gnrt();
+			// @(posedge  clk);
+			ADD_gnrt();
+			// @(posedge  clk);
+			SUB_gnrt();
+			// @(posedge  clk);
+			AND_gnrt();
+			// @(posedge  clk);
+			OR_gnrt();
+			// @(posedge  clk);
+			XOR_gnrt();
+			// @(posedge  clk);
+			SL_gnrt();
+			// @(posedge  clk);
+			SR_gnrt();
+			// @(posedge  clk);
+			SRU_gnrt();
+			// @(posedge  clk);
+			// I-Type
+			ADDI_gnrt();
+			// @(posedge  clk);
+			LD_gnrt();
+			// @(posedge  clk);
+			ST_gnrt();
+			// @(posedge  clk);
+			BZ_gnrt();
+			// @(posedge  clk);
+			$fwrite(f,"%b\n",{ opcode, rd, rs1, rs2, zeros});
+		end	
+		$fclose(f);
+	endtask
 
-endmodule
+endclass
