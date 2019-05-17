@@ -4,3 +4,11 @@ rtl/.vs/rtl/v16/.suo
 rtl/.vs/slnx.sqlite
 rtl/.vs/VSWorkspaceState.json
 ECE593Project.cr.mti
+*.qdb
+*.qpg
+*.qtl
+Deliverables/work/_info
+Deliverables/transcript
+Deliverables/work/_opt__lock
+Deliverables/work/_vmake
+Deliverables/.nfs00000000002a565f00000159
