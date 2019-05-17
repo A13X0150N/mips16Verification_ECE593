@@ -1,3 +1,4 @@
+`timescale 1ns/1ps
 import MIPS_pkg::*;
 	
 class generator;
@@ -13,13 +14,13 @@ class generator;
 	bit [2:0] rs2;
 	bit [2:0] zeros;
 
-	function REG_gnrt();
+	function [2:0] REG_gnrt();
 		bit [2:0] reg_addr;
 		reg_addr = $random;
 		return reg_addr;
 	endfunction:REG_gnrt
 	
-	function IMM_gnrt();
+	function [2:0] IMM_gnrt();
 		bit [2:0] imm_value;
 		imm_value = $random;
 		return imm_value;
@@ -141,29 +142,45 @@ class generator;
 		begin
 			// R-Type
 			OR_gnrt();
+			$fwrite(f,"%b\n",{ opcode, rd, rs1, rs2, zeros});
 			// @(posedge  clk);
+			#1;
 			ADD_gnrt();
+			$fwrite(f,"%b\n",{ opcode, rd, rs1, rs2, zeros});
+			#1;
 			// @(posedge  clk);
 			SUB_gnrt();
+			$fwrite(f,"%b\n",{ opcode, rd, rs1, rs2, zeros});
 			// @(posedge  clk);
+			#1;
 			AND_gnrt();
+			$fwrite(f,"%b\n",{ opcode, rd, rs1, rs2, zeros});
 			// @(posedge  clk);
+			#1;
 			OR_gnrt();
+			$fwrite(f,"%b\n",{ opcode, rd, rs1, rs2, zeros});
 			// @(posedge  clk);
 			XOR_gnrt();
+			$fwrite(f,"%b\n",{ opcode, rd, rs1, rs2, zeros});
 			// @(posedge  clk);
 			SL_gnrt();
+			$fwrite(f,"%b\n",{ opcode, rd, rs1, rs2, zeros});
 			// @(posedge  clk);
 			SR_gnrt();
+			$fwrite(f,"%b\n",{ opcode, rd, rs1, rs2, zeros});
 			// @(posedge  clk);
 			SRU_gnrt();
+			$fwrite(f,"%b\n",{ opcode, rd, rs1, rs2, zeros});
 			// @(posedge  clk);
 			// I-Type
 			ADDI_gnrt();
+			$fwrite(f,"%b\n",{ opcode, rd, rs1, rs2, zeros});
 			// @(posedge  clk);
 			LD_gnrt();
+			$fwrite(f,"%b\n",{ opcode, rd, rs1, rs2, zeros});
 			// @(posedge  clk);
 			ST_gnrt();
+			$fwrite(f,"%b\n",{ opcode, rd, rs1, rs2, zeros});
 			// @(posedge  clk);
 			BZ_gnrt();
 			// @(posedge  clk);
