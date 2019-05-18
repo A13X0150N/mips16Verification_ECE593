@@ -9,23 +9,22 @@
 // 	Description: Deterministic testbench design to show DUV is working
 //////////////////////////////////////////////////////////////////////////
 
-`timescale 1ns/1ps
-`include "../rtl/mips_16_defs.v"
 `include "generator.sv"
+`timescale 1ns/1ps
 module top_tb;
 	import MIPS_pkg::*;
-	
+
 	parameter CLK_PERIOD = 10;
     bit clk_en = 0;
-	
+
     // Instantiate the interface for the design
     mipsIF mif();
 
     // Drive the clock if it's enabled
     always #(CLK_PERIOD/2)
         mif.clk = clk_en ?  ~mif.clk : mif.clk;
-		
-	
+
+
 	// Enables clock generator
     task enable_clock();
         clk_en = 1;
@@ -58,7 +57,7 @@ module top_tb;
 		duv.register_file_inst.reg_array[6] = $random;
 		duv.register_file_inst.reg_array[7] = $random;
 	endtask
-	
+
 	initial
 	begin
 		generator	generator_i; 		// Create generator object
@@ -68,6 +67,9 @@ module top_tb;
 		enable_clock(); 				// after writing instructions into the instruction memory, enable the clock generator
 		mif.reset();					// Reset the processor
 		// loadRandomRegisterValues();
+
+		$finish;
+
 	end
 
 endmodule
