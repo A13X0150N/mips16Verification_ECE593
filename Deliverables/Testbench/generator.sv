@@ -18,18 +18,20 @@ class generator;
 	endfunction
 	
 
-	opcode_t opcode;
-	bit [2:0] rd;
-	bit [2:0] rs1;
-	bit [2:0] rs2;
-	bit [2:0] zeros;
+	opcode_t opcode;	// Opcodes
+	bit [2:0] rd;		// Destination register
+	bit [2:0] rs1;		// Source register 1
+	bit [2:0] rs2;		// Source register 2
+	bit [2:0] zeros;	// zero offset
 
+	// Selects one of the registers
 	function [2:0] REG_gnrt();
 		bit [2:0] reg_addr;
 		reg_addr = $random;
 		return reg_addr;
 	endfunction:REG_gnrt
 	
+	// Generates 3 bit immediate value
 	function [2:0] IMM_gnrt();
 		bit [2:0] imm_value;
 		imm_value = $random;
@@ -144,7 +146,7 @@ class generator;
 	
 	int f;
 	
-	// Generates testfile
+	// Generates instruction file
 	task generateTestFile();
 		$display("into the display");
 		f = $fopen("instructions.txt","w");
