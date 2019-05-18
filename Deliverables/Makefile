@@ -1,11 +1,17 @@
 full:
 	vlib work
-	vlog ./*.sv
-	vlog ./*.v
+	vlog Testbench/MIPS_pkg.sv
+	vlog Testbench/*.sv
+	vlog Testbench/*.v
+	vlog DUV/*.sv
+	vlog DUV/*.v
 	vsim -c top_tb -do "run -all; quit"
 compile:
-	vlog ./*.sv
-	vlog ./*.v
+	vlog Testbench/MIPS_pkg.sv
+	vlog Testbench/*.sv
+	vlog Testbench/*.v
+	vlog DUV/*.sv
+	vlog DUV/*.v
 run:
 	vsim -c top_tb -do "run -all; quit"
 clean:
