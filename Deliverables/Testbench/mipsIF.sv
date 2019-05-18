@@ -9,7 +9,7 @@
 // 	Description: Required interface to drive DUV
 //////////////////////////////////////////////////////////////////////////
 `timescale 1ns/1ps
-`include "../rtl/mips_16_defs.v"
+`include "../DUV/mips_16_defs.v"
 interface mipsIF();
 	import MIPS_pkg::*;
     parameter CLK_PERIOD = 10;
@@ -27,7 +27,7 @@ interface mipsIF();
     // logic    [56:0]              ID_pipeline_reg_out;    // ID_stage --> EX_stage
     // logic    [37:0]              EX_pipeline_reg_out;    // EX_stage --> MEM_stage
     // logic    [36:0]              MEM_pipeline_reg_out;   // MEM_stage --> WB_stage
-    
+
     // logic    [2:0]               reg_read_addr_1;        // ID_stage --> register_file
     // logic    [2:0]               reg_read_addr_2;        // ID_stage --> register_file
     // logic    [15:0]              reg_read_data_1;        // register_file --> ID_stage
@@ -45,7 +45,7 @@ interface mipsIF();
 	bit [2:0] rd;		// Destination register
 	bit [2:0] rs1;		// Source register 1
 	bit [2:0] rs2;		// Source register 2
-	bit [2:0] zeros;	// Zero offset  
+	bit [2:0] zeros;	// Zero offset
 
 	// Reset operation
     task reset();
@@ -55,6 +55,6 @@ interface mipsIF();
         repeat (10) @(posedge clk);
         rst = 0;
     endtask
-   
+
 
 endinterface : mipsIF
