@@ -147,7 +147,7 @@ class generator;
 	// Generates testfile
 	task generateTestFile();
 		$display("into the display");
-		f = $fopen("N:/instructions.txt","w");
+		f = $fopen("instructions.txt","w");
 		// f = $fopen("\\khensu\Home03\orbegi\Desktop\Final\mips16Verification_ECE593\instructions.txt","w");
 		repeat(1000)
 		begin

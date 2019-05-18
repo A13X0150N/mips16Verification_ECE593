@@ -41,12 +41,13 @@ interface mipsIF();
     // logic    [2:0]               reg_write_dest;         // WB_stage --> register_file
     // logic    [15:0]              reg_write_data;         // WB_stage --> register_file
 
-	opcode_t opcode;
-	bit [2:0] rd;
-	bit [2:0] rs1;
-	bit [2:0] rs2;
-	bit [2:0] zeros;
+	opcode_t opcode;	// opcodes
+	bit [2:0] rd;		// Destination register
+	bit [2:0] rs1;		// Source register 1
+	bit [2:0] rs2;		// Source register 2
+	bit [2:0] zeros;	// Zero offset  
 
+	// Reset operation
     task reset();
         rst = 0;
         repeat (10) @(posedge clk);

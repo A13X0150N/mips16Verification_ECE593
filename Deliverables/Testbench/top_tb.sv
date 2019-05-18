@@ -14,15 +14,22 @@
 `include "generator.sv"
 module top_tb;
 	import MIPS_pkg::*;
+	
+	parameter CLK_PERIOD = 10;
+    bit clk_en = 0;
+	
     // Instantiate the interface for the design
     mipsIF mif();
 
-    parameter CLK_PERIOD = 10;
-    bit clk_en = 0;
-
-    // Drive the clock
+    // Drive the clock if it's enabled
     always #(CLK_PERIOD/2)
         mif.clk = clk_en ?  ~mif.clk : mif.clk;
+		
+	
+	// Enables clock generator
+    task enable_clock();
+        clk_en = 1;
+    endtask : enable_clock
 
     // Instantiate the DUV
     mips_16_core_top duv (
@@ -31,18 +38,16 @@ module top_tb;
         .pc(mif.pc)
     );
 
+	// Task fills the instruction memory of processor
     task fill_inst_mem();
-        $readmemb("N:/instructions.txt", duv.IF_stage_inst.imem.rom);
+        $readmemb("instructions.txt", duv.IF_stage_inst.imem.rom);
     endtask : fill_inst_mem
 
     // task fill_data_mem();
         // $readmemb("data.txt", duv.MEM_stage_inst.dmem.ram);
     // endtask : fill_data_mem
 
-    task enable_clock();
-        clk_en = 1;
-    endtask : enable_clock
-
+	// Task fills registers with random numbers
     task loadRandomRegisterValues();
 		duv.register_file_inst.reg_array[0] = $random;
 		duv.register_file_inst.reg_array[1] = $random;
@@ -56,13 +61,12 @@ module top_tb;
 	
 	initial
 	begin
-		// disable_clock();
-		generator	generator_i;
+		generator	generator_i; 		// Create generator object
 		generator_i =  new();
-		generator_i.generateTestFile();
-		fill_inst_mem();
-		enable_clock(); // after writing instructions into the instruction memory, enable the clock generator
-		mif.reset();
+		generator_i.generateTestFile(); // Generate instruction file
+		fill_inst_mem();				// Fill the memory with that file
+		enable_clock(); 				// after writing instructions into the instruction memory, enable the clock generator
+		mif.reset();					// Reset the processor
 		// loadRandomRegisterValues();
 	end
 
