@@ -52,4 +52,4 @@ class tester;
 		end:repeatloop
 	endtask:execute
 
-endclass
+endclass:tester

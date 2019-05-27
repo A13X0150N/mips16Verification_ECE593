@@ -31,9 +31,8 @@ module top_tb;
 
 	initial
 	begin
-		
+		tester_h.execute();
 		$finish;
-
 	end
 
 endmodule
