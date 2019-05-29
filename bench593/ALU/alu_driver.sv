@@ -4,10 +4,10 @@ typedef class driver;
 
 class alu_driver_cbs;
 	virtual task pre_drive(input driver drv, inout bit drop);
-	endtask : pre_tx
+	endtask : pre_drive
 
 	virtual task post_drive(input driver drv);
-	endtask : post_tx
+	endtask : post_drive
 endclass //alu_driver_cbs
 
 
@@ -17,13 +17,13 @@ class driver;
 
 	mailbox generator_to_driver;
 	event   driver_to_generator_event;
-	alu_if alu_if;
+	alu_intf alu_intf;
 	alu_driver_cbs cbs_list[$];
 
-	function new(input mailbox generator_to_driver, input event driver_to_generator_event, input alu_if);
+	function new(mailbox generator_to_driver, event driver_to_generator_event, alu_intf intf);
 		this.generator_to_driver = generator_to_driver;
 		this.driver_to_generator_event = driver_to_generator_event;
-		this.alu_if  = alu_if;
+		this.alu_intf  = intf;
 	endfunction : new
 
 
@@ -41,9 +41,9 @@ class driver;
 
 		txn.display("sending ALU txn: ");
 		//Send data
-		alu_if.a = tnx.a;
-		alu_if.b = tnx.b;
-		alu_if.cmd = tnx.cmd;
+		alu_intf.a = tnx.a;
+		alu_intf.b = tnx.b;
+		alu_intf.cmd = tnx.cmd;
 
 		//Wait for data to propgate out
 		#4;
@@ -51,19 +51,19 @@ class driver;
 	endtask
 
 	protected task pre_drive();
-	    gen2drv.peek(txn);
+	    generator_to_driver.peek(txn);
 		foreach (cbs_list[i]) begin
 			cbs_list[i].pre_drive(this, drop);
         end
 
 	endtask
 
-	protected task pre_drive();
+	protected task post_drive();
 		foreach (cbs_list[i])
-			cbs_list[i].post_tx(this, txn);
+			cbs_list[i].post_drive(this, txn);
 		end
-		gen2drv.get(txn);
-		->drv2gen;
+		generator_to_driver.get(txn);
+		->driver_to_generator_event;
 	endtask
 
 
