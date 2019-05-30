@@ -1,4 +1,6 @@
 
+`include "alu_pkg.sv"
+
 virtual class transaction;
   static int count;
   int id;
@@ -14,19 +16,20 @@ endclass : transaction
 
 class alu_txn extends transaction;
 
-	rand logic [alu_width -1 : 0] a;
-	rand logic [alu_width -1 : 0] b;
-	rand logic [alu_cmd_width -1 : 0] cmd;
+	rand logic [`ALU_WIDTH -1 : 0] a;
+	rand logic [`ALU_WIDTH -1 : 0] b;
+	rand logic [`ALU_CMD_WIDTH -1 : 0] cmd;
 	function new();
 		super.new();
 
 	endfunction
 
 	virtual function bit compare(transaction to);
+		alu_txn compare_to;
+
 		if(to == null)
 			return 0;
-		alu_txn compare_to;
-		assert_cond($cast(compare_to, to),"cast failed");
+		`ASSERT_COND($cast(compare_to, to),"cast failed");
 		if (this.a != compare_to.a || this.b != compare_to.b || this.cmd != compare_to.cmd)
 			return 0;
 		else
@@ -55,17 +58,17 @@ endclass
 
 class alu_result_txn extends transaction;
 
-	logic [alu_width -1 : 0] result;
+	logic [`ALU_WIDTH -1 : 0] result;
 
 	function new();
 		super.new();
 	endfunction
 
 	virtual function bit compare(transaction to);
+		alu_result_txn compare_to;
 		if(to == null)
 			return 0;
-		alu_txn compare_to;
-		assert_cond($cast(compare_to, to),"cast failed");
+		`ASSERT_COND($cast(compare_to, to),"cast failed");
 		if (this.result != compare_to.result)
 			return 0;
 		else
@@ -73,7 +76,7 @@ class alu_result_txn extends transaction;
 	endfunction : compare
 
 	virtual function transaction copy(transaction to=null);
-		alu_txn new_copy;
+		alu_result_txn new_copy;
 		if(to != null)
 			new_copy = new();
 		else
@@ -83,8 +86,7 @@ class alu_result_txn extends transaction;
 	endfunction
 
 	virtual function void display(string prefix="");
-		$display("%s id:%0d result=%x",
-	    prefix, result);
+		$display("%s id:%0d result=%x",	prefix, id, result);
 	endfunction
 
 endclass

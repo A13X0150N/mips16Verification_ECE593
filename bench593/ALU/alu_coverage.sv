@@ -1,5 +1,5 @@
 
-
+`include "transaction.sv"
 
 class coverage;
 
@@ -22,13 +22,12 @@ class coverage;
       }
 
 	  cmd: coverpoint txn.cmd;
-      }
 	endgroup
 
 
 	covergroup alu_result_cov;
 
-      results: coverpoint result_txn.results {
+      results: coverpoint result_txn.result {
          bins zeros = {'h0000};
          bins others= {['h1:'hFFFE]};
          bins ones  = {'hFFFF};
@@ -41,16 +40,16 @@ class coverage;
 		alu_result_cov = new;
 	endfunction : new
 
-	function void sample_alu_txn(alu_txn txn)
+	function void sample_alu_txn(alu_txn txn);
 	   this.txn = txn;
-	   txn.display($sformatf("@%0t: Coverage: ", $time))
+	   txn.display($sformatf("@%0t: Coverage: ", $time));
 	   alu_txn_cov.sample();
 	endfunction : sample_alu_txn
 
-	function void sample_alu_result(result_txn txn)
-	   $display("@%0t: Coverage: src=%d. FWD=%b", $time, src, fwd);
+	function void sample_alu_result(alu_result_txn txn);
 	   this.result_txn = txn;
-	   alu_txn_cov.sample();
-	endfunction : sample_alu_txn
+	   txn.display($sformatf("@%0t: Coverage: ", $time));
+	   alu_result_cov.sample();
+	endfunction : sample_alu_result
 
 endclass : coverage

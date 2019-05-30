@@ -1,5 +1,6 @@
 
-
+`include "mips_16_defs.sv"
+`include "transaction.sv"
 
 class scoreboard;
 
@@ -10,7 +11,7 @@ class scoreboard;
 
 	function void save_current_txn(alu_txn txn);
 		current_txn = txn;
-		txn.display($sformatf("@%0t: ALU Scoreboard save: ", $time))
+		txn.display($sformatf("@%0t: ALU Scoreboard save: ", $time));
 	endfunction
 
 	function void check_result(alu_result_txn result_txn);
@@ -44,13 +45,12 @@ class scoreboard;
 			`ALU_OR :	predicted_txn.result = txn.a | txn.b;
 			`ALU_XOR :	predicted_txn.result = txn.a ^ txn.b;
 			`ALU_SL :	predicted_txn.result = txn.a << txn.b;
-			`ALU_SR :	predicted_txn.result = {{16{a[15]}},a} >> b;
-			`ALU_SRU :	predicted_txn.result = {16'b0,a} >> b;
+			`ALU_SR :	predicted_txn.result = {{16{txn.a[15]}},txn.a} >> txn.b;
+			`ALU_SRU :	predicted_txn.result = {16'b0,txn.a} >> txn.b;
 		endcase
 
    		return predicted_txn;
 
 	endfunction : predict_result
 
-
-endclass : Scoreboard
+endclass : scoreboard
