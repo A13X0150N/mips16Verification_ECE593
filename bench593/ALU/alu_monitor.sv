@@ -5,13 +5,11 @@ class alu_monitor_cbs;
 	endtask : post_monitor
 endclass //alu_driver_cbs
 
-
-
 class monitor;
 
 	alu_intf alu_intf;
 	alu_monitor_cbs cbs_list[$];
-	alu_txn txn;
+	alu_result_txn txn;
 
 
 	function new(alu_intf intf);

@@ -44,10 +44,6 @@ class driver;
 		alu_intf.a = tnx.a;
 		alu_intf.b = tnx.b;
 		alu_intf.cmd = tnx.cmd;
-
-		//Wait for data to propgate out
-		#4;
-		tnx.result = alu.result;
 	endtask
 
 	protected task pre_drive();
