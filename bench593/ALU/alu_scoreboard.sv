@@ -45,8 +45,8 @@ class scoreboard;
 			`ALU_OR :	predicted_txn.result = txn.a | txn.b;
 			`ALU_XOR :	predicted_txn.result = txn.a ^ txn.b;
 			`ALU_SL :	predicted_txn.result = txn.a << txn.b;
-			`ALU_SR :	predicted_txn.result = {{16{txn.a[15]}},txn.a} >> txn.b;
-			`ALU_SRU :	predicted_txn.result = {16'b0,txn.a} >> txn.b;
+			`ALU_SR :	predicted_txn.result = txn.a >>> txn.b;
+			`ALU_SRU :	predicted_txn.result = txn.a >> txn.b;
 		endcase
 
    		return predicted_txn;
