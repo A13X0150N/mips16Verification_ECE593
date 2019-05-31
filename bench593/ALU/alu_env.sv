@@ -6,7 +6,7 @@
 `include "alu_monitor.sv"
 `include "transaction.sv"
 
-class scb_driver_cbs extends alu_driver_cbs;
+class driver_scb_cbs extends alu_driver_cbs;
    scoreboard scb;
 
    function new(scoreboard scb);
@@ -19,7 +19,7 @@ class scb_driver_cbs extends alu_driver_cbs;
 endclass : scb_Driver_cbs
 
 
-class scb_coverage_cbs extends alu_driver_cbs;
+class driver_coverage_cbs extends alu_driver_cbs;
    coverage cov;
 
    function new(coverage cov);
@@ -44,7 +44,7 @@ class monitor_scb_cbs extends alu_monitor_cbs;
 	endtask : post_monitor
 endclass : scb_Monitor_cbs
 
-class monitor_cov_cbs extends alu_monitor_cbs;
+class monitor_coverage_cbs extends alu_monitor_cbs;
    coverage cov;
 
     function new(coverage cov);
@@ -55,4 +55,53 @@ class monitor_cov_cbs extends alu_monitor_cbs;
         cov.sample_alu_txn(txn);
 	endtask : post_monitor
 endclass : scb_Monitor_cbs
+
+
+class environment;
+    mailbox generator_to_driver;
+    event   driver_to_generator_event;
+    alu_driver driver;
+    alu_monitor monitor;
+    alu_scoreboard scoreboard;
+    alu_coverage coverage;
+    alu_intf_f intf;
+
+
+    function new(alu_intf_f intf);
+		this.intf  = intf;
+    endfunction
+    virtual function void build();
+    	driver =  new(generator_to_driver, driver_to_generator_event, intf);
+        alu_monitor =  new(intf);
+        scoreboard = new();
+        coverage = new();
+
+
+        driver_scb_cbs = new (scoreboard);
+        monitor_scb_cbs = new (scoreboard);
+        driver_coverage_cbs = new (coverage);
+        monitor_coverage_cbs = new (coverage);
+
+        driver.cbs_list.pushback(driver_scb_cbs);
+        driver.cbs_list.pushback(driver_coverage_cbs);
+        mointor.cbs_list.pushback(monitor_scb_cbs);
+        mointor.cbs_list.pushback(monitor_coverage_cbs);
+    endfunction
+
+    virtual task run();
+        fork
+            driver.run();
+            mointor.run();
+        join_none
+
+        //Should wait for test generation
+    endfunction
+
+
+    virtual function void finish();
+        $display("@%0t: End of simulation", $time);
+        scoreboard.finish();
+    endfunction
+
+endclass : Environment
 

@@ -1,7 +1,7 @@
 
 `include "transaction.sv"
 
-class coverage;
+class alu_coverage;
 
 	alu_txn txn;
 	alu_result_txn result_txn;

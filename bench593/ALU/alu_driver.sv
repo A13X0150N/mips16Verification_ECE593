@@ -16,7 +16,7 @@ class alu_driver_cbs;
 endclass //alu_driver_cbs
 
 
-class driver;
+class alu_driver;
 	protected alu_txn  txn;
 	protected bit drop = 0;
 

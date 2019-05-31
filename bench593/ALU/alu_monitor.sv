@@ -12,7 +12,7 @@ class alu_monitor_cbs;
 	endtask : post_monitor
 endclass //alu_driver_cbs
 
-class monitor;
+class alu_monitor;
 
 	alu_intf_f intf;
 	alu_monitor_cbs cbs_list[$];

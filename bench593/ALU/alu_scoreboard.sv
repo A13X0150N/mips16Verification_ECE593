@@ -2,7 +2,7 @@
 `include "mips_16_defs.sv"
 `include "transaction.sv"
 
-class scoreboard;
+class alu_scoreboard;
 
 	alu_txn current_txn;
 	function new();
