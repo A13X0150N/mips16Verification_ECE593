@@ -70,6 +70,7 @@ class environment;
     function new(alu_intf_f intf);
 		this.intf  = intf;
     endfunction
+    
     virtual function void build();
     	driver =  new(generator_to_driver, driver_to_generator_event, intf);
         alu_monitor =  new(intf);
@@ -86,6 +87,7 @@ class environment;
         driver.cbs_list.pushback(driver_coverage_cbs);
         mointor.cbs_list.pushback(monitor_scb_cbs);
         mointor.cbs_list.pushback(monitor_coverage_cbs);
+
     endfunction
 
     virtual task run();
@@ -93,10 +95,8 @@ class environment;
             driver.run();
             mointor.run();
         join_none
-
         //Should wait for test generation
     endfunction
-
 
     virtual function void finish();
         $display("@%0t: End of simulation", $time);
