@@ -40,7 +40,7 @@ class monitor_scb_cbs extends alu_monitor_cbs;
    endfunction : new
 
 	virtual task post_monitor(alu_result_txn txn);
-        scb.predict_result(txn);
+        scb.check_result(txn);
 	endtask : post_monitor
 endclass : scb_Monitor_cbs
 
