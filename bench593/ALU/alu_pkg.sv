@@ -1,9 +1,13 @@
+package alu_pkg;
+
+	`include "mips_16_defs.v"
+	`include "alu_defs.sv"
+
+	`include "transaction.sv"
+	`include "alu_scoreboard.sv"
+	`include "alu_driver.sv"
+	`include "alu_monitor.sv"
+	`include "alu_coverage.sv"
 
 
-	`define ALU_WIDTH 16
-	`define ALU_CMD_WIDTH 3
-
-	`define ASSERT_COND(condition, message) \
-			assert (condition) \
-			else   $error(message)
-
+endpackage : alu_pkg

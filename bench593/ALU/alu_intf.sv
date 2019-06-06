@@ -1,5 +1,5 @@
 
-`include "alu_pkg.sv"
+`include "alu_defs.sv"
 
 interface alu_intf;
 

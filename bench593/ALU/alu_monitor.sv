@@ -1,11 +1,12 @@
 
-
-`include "alu_pkg.sv"
-`include "alu_intf.sv"
-`include "transaction.sv"
+`ifndef MONITOR
+`define MONITOR
 
 
-typedef class monitor;
+	`include "transaction.sv"
+
+
+typedef class alu_monitor;
 
 class alu_monitor_cbs;
 	virtual task post_monitor(alu_result_txn txn);
@@ -14,12 +15,12 @@ endclass //alu_driver_cbs
 
 class alu_monitor;
 
-	alu_intf_f intf;
+	virtual alu_intf_f intf;
 	alu_monitor_cbs cbs_list[$];
 	alu_result_txn txn;
 
 
-	function new(alu_intf_f intf);
+	function new(virtual alu_intf_f intf);
 		this.intf = intf;
 	endfunction : new
 
@@ -34,8 +35,10 @@ class alu_monitor;
 	task mointor_alu();
 		@(intf.result);
 		txn = new();
-		tnx.result = intf.result;
+		txn.result = intf.result;
 		txn.display($sformatf("@%0t: mointor: ", $time));
 	endtask: mointor_alu
 
-endclass : monitor
+endclass : alu_monitor
+
+`endif // MONITOR

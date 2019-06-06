@@ -1,5 +1,8 @@
 
-`include "alu_pkg.sv"
+`ifndef TXN
+`define TXN
+
+	`include "alu_defs.sv"
 
 virtual class transaction;
   static int count;
@@ -90,3 +93,5 @@ class alu_result_txn extends transaction;
 	endfunction
 
 endclass
+
+`endif // TXN

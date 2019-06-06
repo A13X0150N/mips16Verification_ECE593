@@ -1,7 +1,5 @@
-`include "environment.sv"
 
-
-program automatic test
+program automatic test;
 
     alu_intf_f intf;
     environment env;

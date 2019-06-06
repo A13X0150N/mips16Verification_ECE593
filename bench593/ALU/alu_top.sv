@@ -1,5 +1,4 @@
-`include "alu_intf.sv"
-`include "alu_test.sv"
+
 
 module top;
 
