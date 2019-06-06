@@ -1,0 +1,438 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+d//khensu/Home03/orbegi/Desktop/Final/mips16Verification_ECE593/MentorQuesta
+T_opt
+!s110 1559839678
+V5dzZFmmzknBGJR8Lo;:bZ2
+04 6 4 work top_tb fast 0
+=1-00101867d24a-5cf943be-1c4-3094
+o-quiet -auto_acc_if_foreign -work work +acc
+Z0 tCvgOpt 0
+n@_opt
+OL;O;10.7b;67
+valu
+Z1 !s110 1559839614
+!i10b 1
+!s100 PaKkIBWfI_Z;nd>Rz6QA[0
+I6XfPiZGCB@MTzWaHzb:cn0
+Z2 VDg1SIo80bB@j0V0VzS_@n1
+Z3 dN:/Final/MentorQuesta/QuestaProj
+Z4 w1559152780
+8N:/Final/MentorQuesta/DUV/alu.v
+FN:/Final/MentorQuesta/DUV/alu.v
+Z5 L0 13
+Z6 OL;L;10.7b;67
+r1
+!s85 0
+31
+Z7 !s108 1559839614.000000
+!s107 N:\Final\MentorQuesta\DUV\mips_16_defs.v|N:/Final/MentorQuesta/DUV/alu.v|
+!s90 -reportprogress|300|-work|work|-vopt|-stats=none|N:/Final/MentorQuesta/DUV/alu.v|
+!i113 0
+Z8 o-work work -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+R0
+vdata_mem
+R1
+!i10b 1
+!s100 e_zzeEmJ5<j7?2ZWSM^>92
+IkcTokV7HmU3Wnf@Ydmmcd1
+R2
+R3
+R4
+8N:/Final/MentorQuesta/DUV/data_mem.v
+FN:/Final/MentorQuesta/DUV/data_mem.v
+Z9 L0 14
+R6
+r1
+!s85 0
+31
+R7
+!s107 N:\Final\MentorQuesta\DUV\mips_16_defs.v|N:/Final/MentorQuesta/DUV/data_mem.v|
+!s90 -reportprogress|300|-work|work|-vopt|-stats=none|N:/Final/MentorQuesta/DUV/data_mem.v|
+!i113 0
+R8
+R0
+vEX_stage
+R1
+!i10b 1
+!s100 A1?=Mf@31M`05c5iH1Mih3
+I^jbj=F1ERVYZ^9E_>7^l53
+R2
+R3
+R4
+8N:/Final/MentorQuesta/DUV/EX_stage.v
+FN:/Final/MentorQuesta/DUV/EX_stage.v
+R5
+R6
+r1
+!s85 0
+31
+R7
+!s107 N:\Final\MentorQuesta\DUV\mips_16_defs.v|N:/Final/MentorQuesta/DUV/EX_stage.v|
+!s90 -reportprogress|300|-work|work|-vopt|-stats=none|N:/Final/MentorQuesta/DUV/EX_stage.v|
+!i113 0
+R8
+R0
+n@e@x_stage
+vhazard_detection_unit
+Z10 !s110 1559839615
+!i10b 1
+!s100 0B43l2A?Ol@YDe6Aol@b?2
+IGe9nnPZg;0Yg7YDhNm@Tl1
+R2
+R3
+R4
+8N:/Final/MentorQuesta/DUV/hazard_detection_unit.v
+FN:/Final/MentorQuesta/DUV/hazard_detection_unit.v
+L0 20
+R6
+r1
+!s85 0
+31
+R7
+!s107 N:/Final/MentorQuesta/DUV/hazard_detection_unit.v|
+!s90 -reportprogress|300|-work|work|-vopt|-stats=none|N:/Final/MentorQuesta/DUV/hazard_detection_unit.v|
+!i113 0
+R8
+R0
+vID_stage
+R10
+!i10b 1
+!s100 EeZ1j]kZhY;;iSko64TiJ0
+IlU8Qg@G<FPj[LO`D7lC;Y0
+R2
+R3
+R4
+8N:/Final/MentorQuesta/DUV/ID_stage.v
+FN:/Final/MentorQuesta/DUV/ID_stage.v
+R9
+R6
+r1
+!s85 0
+31
+Z11 !s108 1559839615.000000
+!s107 N:\Final\MentorQuesta\DUV\mips_16_defs.v|N:/Final/MentorQuesta/DUV/ID_stage.v|
+!s90 -reportprogress|300|-work|work|-vopt|-stats=none|N:/Final/MentorQuesta/DUV/ID_stage.v|
+!i113 0
+R8
+R0
+n@i@d_stage
+vIF_stage
+R10
+!i10b 1
+!s100 =E=`a3IoeaB]?:5^e9YM[2
+IAzQbBM2C;`alACL@mZT_W1
+R2
+R3
+R4
+8N:/Final/MentorQuesta/DUV/IF_stage.v
+FN:/Final/MentorQuesta/DUV/IF_stage.v
+R9
+R6
+r1
+!s85 0
+31
+R11
+!s107 N:\Final\MentorQuesta\DUV\mips_16_defs.v|N:/Final/MentorQuesta/DUV/IF_stage.v|
+!s90 -reportprogress|300|-work|work|-vopt|-stats=none|N:/Final/MentorQuesta/DUV/IF_stage.v|
+!i113 0
+R8
+R0
+n@i@f_stage
+vinstruction_mem
+R10
+!i10b 1
+!s100 14[BmiEQn<1NPi9A^eU?^2
+ILN4J^Dddb9TNKWel?_Z;>3
+R2
+R3
+R4
+8N:/Final/MentorQuesta/DUV/instruction_mem.v
+FN:/Final/MentorQuesta/DUV/instruction_mem.v
+L0 16
+R6
+r1
+!s85 0
+31
+R11
+!s107 N:\Final\MentorQuesta\DUV\mips_16_defs.v|N:/Final/MentorQuesta/DUV/instruction_mem.v|
+!s90 -reportprogress|300|-work|work|-vopt|-stats=none|N:/Final/MentorQuesta/DUV/instruction_mem.v|
+!i113 0
+R8
+R0
+vMEM_stage
+R10
+!i10b 1
+!s100 UY^RMW9OiTaLGlDDbb1=N3
+Im]ko;RI1>D2jG[iakZT;o2
+R2
+R3
+R4
+8N:/Final/MentorQuesta/DUV/MEM_stage.v
+FN:/Final/MentorQuesta/DUV/MEM_stage.v
+R9
+R6
+r1
+!s85 0
+31
+R11
+!s107 N:\Final\MentorQuesta\DUV\mips_16_defs.v|N:/Final/MentorQuesta/DUV/MEM_stage.v|
+!s90 -reportprogress|300|-work|work|-vopt|-stats=none|N:/Final/MentorQuesta/DUV/MEM_stage.v|
+!i113 0
+R8
+R0
+n@m@e@m_stage
+vmips_16_core_top
+Z12 !s110 1559839616
+!i10b 1
+!s100 _>8MO[9H:PTVP?CeH1AYK1
+ITnET88kaGLmP><Pl@M=E40
+R2
+R3
+R4
+8N:/Final/MentorQuesta/DUV/mips_16_core_top.v
+FN:/Final/MentorQuesta/DUV/mips_16_core_top.v
+Z13 L0 18
+R6
+r1
+!s85 0
+31
+Z14 !s108 1559839616.000000
+!s107 N:\Final\MentorQuesta\DUV\mips_16_defs.v|N:/Final/MentorQuesta/DUV/mips_16_core_top.v|
+!s90 -reportprogress|300|-work|work|-vopt|-stats=none|N:/Final/MentorQuesta/DUV/mips_16_core_top.v|
+!i113 0
+R8
+R0
+XMIPS_generator_sv_unit
+Z15 DXx6 sv_std 3 std 0 22 >9az<^>2ff9DAl3OFGaAf1
+Z16 DXx4 work 8 MIPS_pkg 0 22 ;<APf^8boB[9hY[`NJF011
+Z17 !s110 1559839613
+!i10b 1
+!s100 17keT54fodh1[:8Q8`d6=1
+IbPSRb^]fkBZJ4nCYB6oNe0
+VbPSRb^]fkBZJ4nCYB6oNe0
+!i103 1
+S1
+R3
+w1559773745
+8N:/Final/MentorQuesta/CHIP/MIPS_generator.sv
+FN:/Final/MentorQuesta/CHIP/MIPS_generator.sv
+Z18 L0 12
+R6
+r1
+!s85 0
+31
+Z19 !s108 1559839613.000000
+!s107 N:/Final/MentorQuesta/CHIP/MIPS_generator.sv|
+!s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|N:/Final/MentorQuesta/CHIP/MIPS_generator.sv|
+!i113 0
+Z20 o-work work -sv -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+R0
+n@m@i@p@s_generator_sv_unit
+XMIPS_pkg
+R15
+R17
+!i10b 1
+!s100 LbJ=]FZffflaZm2N3d=zd1
+I;<APf^8boB[9hY[`NJF011
+V;<APf^8boB[9hY[`NJF011
+S1
+R3
+w1559765954
+8N:/Final/MentorQuesta/CHIP/MIPS_pkg.sv
+FN:/Final/MentorQuesta/CHIP/MIPS_pkg.sv
+L0 2
+R6
+r1
+!s85 0
+31
+R19
+!s107 N:/Final/MentorQuesta/CHIP/MIPS_pkg.sv|
+!s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|N:/Final/MentorQuesta/CHIP/MIPS_pkg.sv|
+!i113 0
+R20
+R0
+n@m@i@p@s_pkg
+XMIPS_reference_sv_unit
+Z21 !s115 mipsIF
+R15
+R16
+R1
+!i10b 1
+!s100 OSB<`YE5R>7<GQMhnbO<53
+I]FW^E3WaRY2PWRoLk6R:I3
+V]FW^E3WaRY2PWRoLk6R:I3
+!i103 1
+S1
+R3
+Z22 w1559839585
+8N:/Final/MentorQuesta/CHIP/MIPS_reference.sv
+FN:/Final/MentorQuesta/CHIP/MIPS_reference.sv
+L0 3
+R6
+r1
+!s85 0
+31
+R19
+!s107 N:/Final/MentorQuesta/CHIP/MIPS_reference.sv|
+!s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|N:/Final/MentorQuesta/CHIP/MIPS_reference.sv|
+!i113 0
+R20
+R0
+n@m@i@p@s_reference_sv_unit
+XMIPS_top_sv_unit
+R21
+R15
+R16
+V<13]<le>8mLbK`?H=Zg4@3
+r1
+!s85 0
+31
+!i10b 1
+!s100 ^>;Fn>>?HFY4[US>>QX6C1
+I<13]<le>8mLbK`?H=Zg4@3
+!i103 1
+S1
+R3
+R22
+Z23 8N:/Final/MentorQuesta/CHIP/MIPS_top.sv
+Z24 FN:/Final/MentorQuesta/CHIP/MIPS_top.sv
+FN:\Final\MentorQuesta\CHIP\MIPS_generator.sv
+FN:\Final\MentorQuesta\CHIP\MIPS_reference.sv
+R18
+R6
+31
+R7
+Z25 !s107 N:\Final\MentorQuesta\CHIP\MIPS_reference.sv|N:\Final\MentorQuesta\CHIP\MIPS_generator.sv|N:/Final/MentorQuesta/CHIP/MIPS_top.sv|
+Z26 !s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|N:/Final/MentorQuesta/CHIP/MIPS_top.sv|
+!i113 0
+R20
+R0
+n@m@i@p@s_top_sv_unit
+YmipsIF
+R15
+R16
+!s110 1559839617
+!i10b 1
+!s100 :5Y077B<^][gE?31EmE6m3
+IPDSGE1OcjD?g?Wm@6Y4TV0
+R2
+!s105 MIPS_if_sv_unit
+S1
+R3
+w1559838441
+8N:/Final/MentorQuesta/CHIP/MIPS_if.sv
+FN:/Final/MentorQuesta/CHIP/MIPS_if.sv
+R5
+R6
+r1
+!s85 0
+31
+R14
+!s107 ../DUV/mips_16_defs.v|N:/Final/MentorQuesta/CHIP/MIPS_if.sv|
+!s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|N:/Final/MentorQuesta/CHIP/MIPS_if.sv|
+!i113 0
+R20
+R0
+nmips@i@f
+XreferenceDesign_sv_unit
+R15
+!s110 1559774646
+!i10b 1
+!s100 =7nhIZ7VV?PFVi`5jKC`51
+I=8mejPO4SlEm`na<nC1?`3
+V=8mejPO4SlEm`na<nC1?`3
+!i103 1
+S1
+R3
+w1559774324
+8N:\Final\MentorQuesta\QuestaProj\referenceDesign.sv
+FN:\Final\MentorQuesta\QuestaProj\referenceDesign.sv
+L0 1
+R6
+r1
+!s85 0
+31
+!s108 1559774646.000000
+!s107 N:\Final\MentorQuesta\QuestaProj\referenceDesign.sv|
+!s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|N:\Final\MentorQuesta\QuestaProj\referenceDesign.sv|
+!i113 0
+R20
+R0
+nreference@design_sv_unit
+vregister_file
+R12
+!i10b 1
+!s100 ]5CIm?@^mN9jd0V`5nG_f0
+I2oNBOKOaA3bRKNBN]D8NY0
+R2
+R3
+R4
+8N:/Final/MentorQuesta/DUV/register_file.v
+FN:/Final/MentorQuesta/DUV/register_file.v
+R13
+R6
+r1
+!s85 0
+31
+R14
+!s107 N:\Final\MentorQuesta\DUV\mips_16_defs.v|N:/Final/MentorQuesta/DUV/register_file.v|
+!s90 -reportprogress|300|-work|work|-vopt|-stats=none|N:/Final/MentorQuesta/DUV/register_file.v|
+!i113 0
+R8
+R0
+vtop_tb
+R15
+R16
+DXx4 work 16 MIPS_top_sv_unit 0 22 <13]<le>8mLbK`?H=Zg4@3
+R2
+r1
+!s85 0
+31
+!i10b 1
+!s100 e]9Yo_`V<1Y8^>ifOTFVo3
+IbG0;XOM?LDh`k@7jfEIF`2
+!s105 MIPS_top_sv_unit
+S1
+R3
+w1559838993
+R23
+R24
+L0 15
+R6
+31
+R7
+R25
+R26
+!i113 0
+R20
+R0
+vWB_stage
+R12
+!i10b 1
+!s100 lPc]WNcLjbjzhz?QiJS_80
+IdKzRWieFI6930<0mPFF;;0
+R2
+R3
+R4
+8N:/Final/MentorQuesta/DUV/WB_stage.v
+FN:/Final/MentorQuesta/DUV/WB_stage.v
+R5
+R6
+r1
+!s85 0
+31
+R14
+!s107 N:\Final\MentorQuesta\DUV\mips_16_defs.v|N:/Final/MentorQuesta/DUV/WB_stage.v|
+!s90 -reportprogress|300|-work|work|-vopt|-stats=none|N:/Final/MentorQuesta/DUV/WB_stage.v|
+!i113 0
+R8
+R0
+n@w@b_stage

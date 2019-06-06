@@ -1,0 +1,7 @@
+class referenceDesign;
+
+function new();
+
+endclass
+
+endclass

@@ -1,0 +1,122 @@
+N:/Final/MentorQuesta/DUV/instruction_mem.v {1 {vlog -work work -vopt -stats=none N:/Final/MentorQuesta/DUV/instruction_mem.v
+QuestaSim-64 vlog 10.7b Compiler 2018.06 Jun  8 2018
+-- Compiling module instruction_mem
+
+Top level modules:
+	instruction_mem
+
+} {} {}} N:/Final/MentorQuesta/DUV/data_mem.v {1 {vlog -work work -vopt -stats=none N:/Final/MentorQuesta/DUV/data_mem.v
+QuestaSim-64 vlog 10.7b Compiler 2018.06 Jun  8 2018
+-- Compiling module data_mem
+
+Top level modules:
+	data_mem
+
+} {} {}} N:/Final/MentorQuesta/DUV/EX_stage.v {1 {vlog -work work -vopt -stats=none N:/Final/MentorQuesta/DUV/EX_stage.v
+QuestaSim-64 vlog 10.7b Compiler 2018.06 Jun  8 2018
+-- Compiling module EX_stage
+
+Top level modules:
+	EX_stage
+
+} {} {}} N:/Final/MentorQuesta/DUV/ID_stage.v {1 {vlog -work work -vopt -stats=none N:/Final/MentorQuesta/DUV/ID_stage.v
+QuestaSim-64 vlog 10.7b Compiler 2018.06 Jun  8 2018
+-- Compiling module ID_stage
+
+Top level modules:
+	ID_stage
+
+} {} {}} N:/Final/MentorQuesta/DUV/IF_stage.v {1 {vlog -work work -vopt -stats=none N:/Final/MentorQuesta/DUV/IF_stage.v
+QuestaSim-64 vlog 10.7b Compiler 2018.06 Jun  8 2018
+-- Compiling module IF_stage
+
+Top level modules:
+	IF_stage
+
+} {} {}} N:/Final/MentorQuesta/CHIP/MIPS_pkg.sv {1 {vlog -work work -vopt -sv -stats=none N:/Final/MentorQuesta/CHIP/MIPS_pkg.sv
+QuestaSim-64 vlog 10.7b Compiler 2018.06 Jun  8 2018
+-- Compiling package MIPS_pkg
+
+Top level modules:
+	--none--
+
+} {} {}} N:/Final/MentorQuesta/DUV/alu.v {1 {vlog -work work -vopt -stats=none N:/Final/MentorQuesta/DUV/alu.v
+QuestaSim-64 vlog 10.7b Compiler 2018.06 Jun  8 2018
+-- Compiling module alu
+
+Top level modules:
+	alu
+
+} {} {}} N:/Final/MentorQuesta/DUV/register_file.v {1 {vlog -work work -vopt -stats=none N:/Final/MentorQuesta/DUV/register_file.v
+QuestaSim-64 vlog 10.7b Compiler 2018.06 Jun  8 2018
+-- Compiling module register_file
+
+Top level modules:
+	register_file
+
+} {} {}} N:/Final/MentorQuesta/CHIP/MIPS_coverage.sv {1 {vlog -work work -vopt -sv -stats=none N:/Final/MentorQuesta/CHIP/MIPS_coverage.sv
+QuestaSim-64 vlog 10.7b Compiler 2018.06 Jun  8 2018
+
+} {} {}} N:/Final/MentorQuesta/CHIP/MIPS_if.sv {1 {vlog -work work -vopt -sv -stats=none N:/Final/MentorQuesta/CHIP/MIPS_if.sv
+QuestaSim-64 vlog 10.7b Compiler 2018.06 Jun  8 2018
+-- Compiling interface mipsIF
+-- Importing package MIPS_pkg
+
+Top level modules:
+	--none--
+
+} {} {}} N:/Final/MentorQuesta/DUV/hazard_detection_unit.v {1 {vlog -work work -vopt -stats=none N:/Final/MentorQuesta/DUV/hazard_detection_unit.v
+QuestaSim-64 vlog 10.7b Compiler 2018.06 Jun  8 2018
+-- Compiling module hazard_detection_unit
+
+Top level modules:
+	hazard_detection_unit
+
+} {} {}} N:/Final/MentorQuesta/CHIP/MIPS_generator.sv {1 {vlog -work work -vopt -sv -stats=none N:/Final/MentorQuesta/CHIP/MIPS_generator.sv
+QuestaSim-64 vlog 10.7b Compiler 2018.06 Jun  8 2018
+
+Top level modules:
+	--none--
+
+} {} {}} N:/Final/MentorQuesta/DUV/mips_16_defs.v {1 {vlog -work work -vopt -stats=none N:/Final/MentorQuesta/DUV/mips_16_defs.v
+QuestaSim-64 vlog 10.7b Compiler 2018.06 Jun  8 2018
+
+} {} {}} N:/Final/MentorQuesta/DUV/mips_16_core_top.v {1 {vlog -work work -vopt -stats=none N:/Final/MentorQuesta/DUV/mips_16_core_top.v
+QuestaSim-64 vlog 10.7b Compiler 2018.06 Jun  8 2018
+-- Compiling module mips_16_core_top
+
+Top level modules:
+	mips_16_core_top
+
+} {} {}} N:/Final/MentorQuesta/DUV/MEM_stage.v {1 {vlog -work work -vopt -stats=none N:/Final/MentorQuesta/DUV/MEM_stage.v
+QuestaSim-64 vlog 10.7b Compiler 2018.06 Jun  8 2018
+-- Compiling module MEM_stage
+
+Top level modules:
+	MEM_stage
+
+} {} {}} N:/Final/MentorQuesta/CHIP/MIPS_top.sv {2 {vlog -work work -vopt -sv -stats=none N:/Final/MentorQuesta/CHIP/MIPS_top.sv
+QuestaSim-64 vlog 10.7b Compiler 2018.06 Jun  8 2018
+-- Compiling package MIPS_top_sv_unit
+-- Importing package MIPS_pkg
+** Warning: N:\Final\MentorQuesta\CHIP\MIPS_reference.sv(124): (vlog-2240) Treating stand-alone use of function 'writeToRegister' as an implicit VOID cast.
+** Warning: N:\Final\MentorQuesta\CHIP\MIPS_reference.sv(129): (vlog-2240) Treating stand-alone use of function 'loadInstructionMemory' as an implicit VOID cast.
+** Warning: N:\Final\MentorQuesta\CHIP\MIPS_reference.sv(132): (vlog-2240) Treating stand-alone use of function 'IF' as an implicit VOID cast.
+** Warning: N:\Final\MentorQuesta\CHIP\MIPS_reference.sv(133): (vlog-2240) Treating stand-alone use of function 'ID' as an implicit VOID cast.
+** Warning: N:\Final\MentorQuesta\CHIP\MIPS_reference.sv(134): (vlog-2240) Treating stand-alone use of function 'EX' as an implicit VOID cast.
+** Warning: N:\Final\MentorQuesta\CHIP\MIPS_reference.sv(135): (vlog-2240) Treating stand-alone use of function 'MEM' as an implicit VOID cast.
+** Warning: N:\Final\MentorQuesta\CHIP\MIPS_reference.sv(136): (vlog-2240) Treating stand-alone use of function 'WB' as an implicit VOID cast.
+-- Compiling module top_tb
+** Warning: N:/Final/MentorQuesta/CHIP/MIPS_top.sv(58): (vlog-2240) Treating stand-alone use of function 'execute' as an implicit VOID cast.
+
+Top level modules:
+	top_tb
+
+} {} {}} N:/Final/MentorQuesta/DUV/WB_stage.v {1 {vlog -work work -vopt -stats=none N:/Final/MentorQuesta/DUV/WB_stage.v
+QuestaSim-64 vlog 10.7b Compiler 2018.06 Jun  8 2018
+-- Compiling module WB_stage
+
+Top level modules:
+	WB_stage
+
+} {} {}}
