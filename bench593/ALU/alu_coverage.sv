@@ -1,5 +1,10 @@
 
+`ifndef COVERAGE
+`define COVERAGE
+
+
 `include "transaction.sv"
+
 
 class alu_coverage;
 
@@ -52,4 +57,6 @@ class alu_coverage;
 	   alu_result_cov.sample();
 	endfunction : sample_alu_result
 
-endclass : coverage
+endclass : alu_coverage
+
+`endif // COVERAGE

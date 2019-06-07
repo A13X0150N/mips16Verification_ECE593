@@ -1,17 +1,16 @@
+`ifndef DRIVER
+`define DRIVER
 
 
-`include "alu_pkg.sv"
-`include "alu_intf.sv"
-`include "transaction.sv"
+	`include "transaction.sv"
 
-typedef class driver;
-
+typedef class alu_driver;
 
 class alu_driver_cbs;
-	virtual task pre_drive(input driver drv, inout bit drop);
+	virtual task pre_drive(input alu_driver drv, inout bit drop);
 	endtask : pre_drive
 
-	virtual task post_drive(input driver drv, alu_txn txn);
+	virtual task post_drive(input alu_driver drv, alu_txn txn);
 	endtask : post_drive
 endclass //alu_driver_cbs
 
@@ -22,10 +21,10 @@ class alu_driver;
 
 	mailbox generator_to_driver;
 	event   driver_to_generator_event;
-	alu_intf_f intf;
+	virtual alu_intf intf;
 	alu_driver_cbs cbs_list[$];
 
-	function new(mailbox generator_to_driver, event driver_to_generator_event, alu_intf_f intf);
+	function new(mailbox generator_to_driver, event driver_to_generator_event, virtual alu_intf intf);
 		this.generator_to_driver = generator_to_driver;
 		this.driver_to_generator_event = driver_to_generator_event;
 		this.intf  = intf;
@@ -42,13 +41,13 @@ class alu_driver;
 		end
 	endtask: run
 
-	task send (alu_txn txn);
+	task drive ();
 
 		txn.display("sending ALU txn: ");
 		//Send data
-		intf.a = tnx.a;
-		intf.b = tnx.b;
-		intf.cmd = tnx.cmd;
+		intf.a = txn.a;
+		intf.b = txn.b;
+		intf.cmd = txn.cmd;
 	endtask
 
 	protected task pre_drive();
@@ -67,4 +66,6 @@ class alu_driver;
 		->driver_to_generator_event;
 	endtask
 
-endclass : driver
+endclass : alu_driver
+
+`endif // DRIVER

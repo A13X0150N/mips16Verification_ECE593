@@ -1,5 +1,8 @@
 
-`include "mips_16_defs.sv"
+`ifndef SCOREBOARD
+`define SCOREBOARD
+
+`include "mips_16_defs.v"
 `include "transaction.sv"
 
 class alu_scoreboard;
@@ -33,11 +36,11 @@ class alu_scoreboard;
 			$display("@%0t: ALU Scoreboard: Finished correctly", $time);
 	endfunction
 
-	protected function alu_result_txn predict_result(alu_txn current_txn);
+	protected function alu_result_txn predict_result(alu_txn txn);
 		alu_result_txn predicted_txn;
 		predicted_txn = new();
 
-		case (current_txn.cmd)
+		case (txn.cmd)
 			`ALU_NC : 	predicted_txn.result = txn.a + txn.b;
 			`ALU_ADD :	predicted_txn.result = txn.a + txn.b;
 			`ALU_SUB :	predicted_txn.result = txn.a - txn.b;
@@ -53,4 +56,6 @@ class alu_scoreboard;
 
 	endfunction : predict_result
 
-endclass : scoreboard
+endclass : alu_scoreboard
+
+`endif // SCOREBOARD
