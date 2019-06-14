@@ -6,6 +6,7 @@
 `include "alu_driver.sv"
 `include "alu_monitor.sv"
 `include "alu_coverage.sv"
+`include "alu_generator.sv"
 
 class driver_scb_cbs extends alu_driver_cbs;
    alu_scoreboard scb;
@@ -65,7 +66,9 @@ class environment;
     alu_monitor monitor;
     alu_scoreboard scoreboard;
     alu_coverage coverage;
+    alu_generator generator;
     virtual alu_intf intf;
+
 
     driver_scb_cbs driver_to_scb_cbs;
     monitor_scb_cbs monitor_to_scb_cbs;
@@ -79,6 +82,7 @@ class environment;
     virtual function void build();
         generator_to_driver = new;
     	driver =  new(generator_to_driver, driver_to_generator_event, intf);
+        generator = new(generator_to_driver, driver_to_generator_event);
         monitor =  new(intf);
         scoreboard = new;
         coverage = new;
@@ -101,6 +105,7 @@ class environment;
             driver.run();
             monitor.run();
         join_none
+            generator.run();
     endtask
 
     virtual function void finish();

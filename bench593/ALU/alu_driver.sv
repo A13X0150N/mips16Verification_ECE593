@@ -42,7 +42,6 @@ class alu_driver;
 	endtask: run
 
 	task drive ();
-
 		txn.display("Driver: sending ALU txn");
 		//Send data
 		intf.a = txn.a;
@@ -55,7 +54,6 @@ class alu_driver;
 		foreach (cbs_list[i]) begin
 			cbs_list[i].pre_drive(this, drop);
         end
-
 	endtask
 
 	protected task post_drive();
@@ -63,7 +61,6 @@ class alu_driver;
 			cbs_list[i].post_drive(this, txn);
 
 		generator_to_driver.get(txn);
-         $display("Triggering the event\n");
 		->driver_to_generator_event;
 	endtask
 

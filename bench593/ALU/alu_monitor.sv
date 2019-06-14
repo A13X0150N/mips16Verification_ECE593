@@ -27,8 +27,6 @@ class alu_monitor;
 	task run();
 		forever begin
 			@(intf.result);
-			// #1
-         	$display("New results\n");
     		mointor_alu();
 			foreach (cbs_list[i])
 				cbs_list[i].post_monitor(txn); 	 // Post-receive callback
