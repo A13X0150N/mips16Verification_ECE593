@@ -101,7 +101,6 @@ class environment;
             driver.run();
             monitor.run();
         join_none
-        //Should wait for test generation
     endtask
 
     virtual function void finish();

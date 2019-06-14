@@ -2,7 +2,7 @@
 `define DRIVER
 
 
-	`include "transaction.sv"
+`include "transaction.sv"
 
 typedef class alu_driver;
 
@@ -43,7 +43,7 @@ class alu_driver;
 
 	task drive ();
 
-		txn.display("sending ALU txn: ");
+		txn.display("Driver: sending ALU txn");
 		//Send data
 		intf.a = txn.a;
 		intf.b = txn.b;
@@ -63,6 +63,7 @@ class alu_driver;
 			cbs_list[i].post_drive(this, txn);
 
 		generator_to_driver.get(txn);
+         $display("Triggering the event\n");
 		->driver_to_generator_event;
 	endtask
 

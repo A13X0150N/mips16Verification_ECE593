@@ -47,13 +47,13 @@ class alu_coverage;
 
 	function void sample_alu_txn(alu_txn txn);
 	   this.txn = txn;
-	   txn.display($sformatf("@%0t: Coverage: ", $time));
+	   txn.display($sformatf("@%0t: Coverage sampled alu txn: ", $time));
 	   alu_txn_cov.sample();
 	endfunction : sample_alu_txn
 
 	function void sample_alu_result(alu_result_txn txn);
 	   this.result_txn = txn;
-	   txn.display($sformatf("@%0t: Coverage: ", $time));
+	   txn.display($sformatf("@%0t: Coverage sampled alu result: ", $time));
 	   alu_result_cov.sample();
 	endfunction : sample_alu_result
 

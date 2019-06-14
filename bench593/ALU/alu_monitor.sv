@@ -26,6 +26,9 @@ class alu_monitor;
 
 	task run();
 		forever begin
+			@(intf.result);
+			// #1
+         	$display("New results\n");
     		mointor_alu();
 			foreach (cbs_list[i])
 				cbs_list[i].post_monitor(txn); 	 // Post-receive callback
@@ -33,10 +36,9 @@ class alu_monitor;
 	endtask : run
 
 	task mointor_alu();
-		@(intf.result);
 		txn = new();
 		txn.result = intf.result;
-		txn.display($sformatf("@%0t: mointor: ", $time));
+		txn.display($sformatf("@%0t: Mointor: ", $time));
 	endtask: mointor_alu
 
 endclass : alu_monitor

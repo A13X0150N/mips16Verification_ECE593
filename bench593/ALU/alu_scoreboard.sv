@@ -19,12 +19,12 @@ class alu_scoreboard;
 
 	function void check_result(alu_result_txn result_txn);
 
+		current_txn.display("ALU Scoreboard check ");
 		if(!result_txn.compare(predict_result(current_txn)))
 			$display("@%0t: ALU Scoreboard ERROR: miss match between prediteced result and actual result", $time);
 		else
 			$display("@%0t: ALU Scoreboard: match prediteced result and actual result", $time);
 
-		current_txn.display("ALU Scoreboard");
 		current_txn = null;
 
 	endfunction
