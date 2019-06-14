@@ -1,5 +1,7 @@
+`ifndef TXN
+`define TXN
 
-`include "alu_pkg.sv"
+	`include "hd_defs.sv"
 
 virtual class transaction;
   static int count;
@@ -37,7 +39,7 @@ class hd_txn extends transaction;
 		if (this.source_reg1 != compare_to.source_reg1 ||
             this.source_reg2 != compare_to.source_reg2 ||
             this.ex_reg != compare_to.ex_reg ||
-            this.mem_reg != compare_to.mem_reg || 
+            this.mem_reg != compare_to.mem_reg ||
             this.wb_reg != compare_to.wb_reg)
 			return 0;
 		else
@@ -61,7 +63,7 @@ class hd_txn extends transaction;
 	endfunction
 
 	virtual function void display(string prefix="");
-		$display("%s id:%0d Source Reg 1=%x, Source Reg 2=%x, Ex Reg=%b, Mem Reg=%b, WB Reg=%b",
+		$display("%s id:%0d Source Reg 1=%x, Source Reg 2=%x, Ex Reg=%x, Mem Reg=%x, WB Reg=%x",
 	    prefix, id, source_reg1, source_reg2, ex_reg, mem_reg, wb_reg);
 	endfunction
 
@@ -69,7 +71,7 @@ endclass
 
 class hd_result_txn extends transaction;
 
-	logic [`REG_WIDTH -1 : 0] stall;
+	logic stall;
 
 	function new();
 		super.new();
@@ -101,3 +103,5 @@ class hd_result_txn extends transaction;
 	endfunction
 
 endclass
+
+`endif // TXN

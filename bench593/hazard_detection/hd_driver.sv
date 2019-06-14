@@ -44,11 +44,11 @@ class hd_driver;
 	task drive ();
 		txn.display("Driver: sending hd txn");
 		//Send data
-		intf.reg1 = tnx.source_reg1;
-		intf.reg2 = tnx.source_reg2;
-		intf.ex = tnx.ex_reg;
-		intf.mem = tnx.mem_reg;
-		intf.wb = tnx.wb_reg;
+		intf.reg1 = txn.source_reg1;
+		intf.reg2 = txn.source_reg2;
+		intf.ex = txn.ex_reg;
+		intf.mem = txn.mem_reg;
+		intf.wb = txn.wb_reg;
 	endtask
 
 	protected task pre_drive();

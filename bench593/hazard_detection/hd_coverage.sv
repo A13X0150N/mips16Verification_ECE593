@@ -14,7 +14,17 @@ class hd_coverage;
 
 	covergroup hd_txn_cov;
 
-      coverpoint txn;
+	  source_reg1: coverpoint txn.source_reg1;
+	  source_reg2: coverpoint txn.source_reg2;
+	  ex_reg: coverpoint txn.ex_reg;
+	  mem_reg: coverpoint txn.mem_reg;
+	  wb_reg: coverpoint txn.wb_reg;
+
+	endgroup
+
+	covergroup hd_result_cov;
+
+	  txn_result: coverpoint result_txn.stall;
 
 	endgroup
 

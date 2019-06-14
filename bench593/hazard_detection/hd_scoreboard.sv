@@ -36,17 +36,23 @@ class hd_scoreboard;
 			$display("@%0t: hd Scoreboard: Finished correctly", $time);
 	endfunction
 
-	protected function hd_result_txn predict_result(hd_txn current_txn);
+	protected function hd_result_txn predict_result(hd_txn txn);
 		hd_result_txn predicted_txn;
 		predicted_txn = new();
 
-        if(current_txn.source_reg1 == current_txn.ex_reg ||  current_txn.source_reg1 == current_txn.mem || current_txn.source_reg1 == current_txn.wb_reg)
-            return predicted_txn.stall = 0;
+        if(txn.source_reg1 == txn.ex_reg ||  txn.source_reg1 == txn.mem_reg || txn.source_reg1 == txn.wb_reg) begin
+            predicted_txn.stall = 0;
+            return predicted_txn;
 
-        if(current_txn.source_reg2 == current_txn.ex_reg ||  current_txn.source_reg2 == current_txn.mem || current_txn.source_reg12== current_txn.wb_reg)
-            return predicted_txn.stall = 0;
+		end
 
-           return predicted_txn.stall = 1 ;
+		if(txn.source_reg2 == txn.ex_reg ||  txn.source_reg2 == txn.mem_reg || txn.source_reg2== txn.wb_reg) begin
+            predicted_txn.stall = 0;
+            return predicted_txn;
+		end
+
+		    predicted_txn.stall = 1;
+            return predicted_txn;
 
 	endfunction : predict_result
 
