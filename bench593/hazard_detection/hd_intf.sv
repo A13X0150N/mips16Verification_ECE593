@@ -11,9 +11,6 @@ interface hd_intf;
 	logic [`REG_WIDTH -1 : 0] wb;
 
     logic stall;
-
-	modport test (output reg1, reg2, ex, mem, wb, input stall);
-
 endinterface //hd_intf
 
 

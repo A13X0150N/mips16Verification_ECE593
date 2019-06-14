@@ -1,11 +1,14 @@
-`include "environment.sv"
+
+`include "hd_env.sv"
+`include "hd_intf.sv"
+`include "transaction.sv"
+`timescale 1ps/1ps
 
 
-program automatic test
+program automatic test(hd_intf intf);
 
-    hd_intf_f intf;
     environment env;
-
+    hd_txn txn;
     initial begin
         env = new(intf);
 

@@ -1,5 +1,8 @@
 
-`include "mips_16_defs.sv"
+`ifndef SCOREBOARD
+`define SCOREBOARD
+
+`include "mips_16_defs.v"
 `include "transaction.sv"
 
 class hd_scoreboard;
@@ -16,12 +19,12 @@ class hd_scoreboard;
 
 	function void check_result(hd_result_txn result_txn);
 
+		current_txn.display("hd Scoreboard check ");
 		if(!result_txn.compare(predict_result(current_txn)))
 			$display("@%0t: hd Scoreboard ERROR: miss match between prediteced result and actual result", $time);
 		else
 			$display("@%0t: hd Scoreboard: match prediteced result and actual result", $time);
 
-		current_txn.display("hd Scoreboard");
 		current_txn = null;
 
 	endfunction
@@ -47,4 +50,6 @@ class hd_scoreboard;
 
 	endfunction : predict_result
 
-endclass : scoreboard
+endclass : hd_scoreboard
+
+`endif // SCOREBOARD

@@ -1,6 +1,14 @@
 
-	`define REG_WIDTH 3
+package hd_pkg;
 
-	`define ASSERT_COND(condition, message) \
-			assert (condition) \
-			else   $error(message)
+	`include "mips_16_defs.v"
+	`include "hd_defs.sv"
+
+	`include "transaction.sv"
+	`include "hd_scoreboard.sv"
+	`include "hd_driver.sv"
+	`include "hd_monitor.sv"
+	`include "hd_coverage.sv"
+
+
+endpackage : hd_pkg
