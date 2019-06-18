@@ -1,7 +1,7 @@
 
 
 `include "transaction.sv"
-`include "mips_16_defs.v"
+`include "../../../DUV/mips_16_defs.v"
 `include "alu_scoreboard.sv"
 `include "alu_driver.sv"
 `include "alu_monitor.sv"

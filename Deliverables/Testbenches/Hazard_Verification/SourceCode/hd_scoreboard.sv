@@ -2,7 +2,7 @@
 `ifndef SCOREBOARD
 `define SCOREBOARD
 
-`include "mips_16_defs.v"
+`include "../../../DUV/mips_16_defs.v"
 `include "transaction.sv"
 
 class hd_scoreboard;
