@@ -1,5 +1,6 @@
 
-`include "hd_pkg.sv"
+`include "hd_defs.sv"
+
 
 interface hd_intf;
 

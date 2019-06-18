@@ -23,7 +23,7 @@ class alu_generator;
             assert (txn.randomize() with { //randomize the transactions
 				a dist {  				   //let's set the distrbution of a
 					0 := 20,			   //20% of the time we want 0
-					'hFFFF:= 20,,		  //20% of the time we want ones
+					'hFFFF:= 20,		  //20% of the time we want ones
 					[1 :  'hFFFE]:/ 60    //60$ of the time we anything in beween
 				};
 				b dist {				//let's set the distrbution of b
