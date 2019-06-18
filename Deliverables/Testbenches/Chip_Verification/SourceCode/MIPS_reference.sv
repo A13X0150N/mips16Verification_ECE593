@@ -1,3 +1,13 @@
+//////////////////////////////////////////////////////////////////////////
+// 	MIPS_reference.sv
+//	ECE 593 - Fundamentals of Pressilicon Validation
+//	Alex Olson
+//	Nurettin Can Orbegi
+//	Matty Baba Allos
+//	Final Project - Reference Design
+// 	----------------------------------------------------
+// 	Description: Reference design for 16-bit MIPS processor  
+//////////////////////////////////////////////////////////////////////////
 // Reference design 
 `include "MIPS_scoreboard_checker.sv"
 

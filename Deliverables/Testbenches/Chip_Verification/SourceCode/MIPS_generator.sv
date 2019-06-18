@@ -1,5 +1,5 @@
 //////////////////////////////////////////////////////////////////////////
-// 	CSM_tb.sv
+// 	MIPS_generator.sv
 //	ECE 593 - Fundamentals of Pressilicon Validation
 //	Alex Olson
 //	Nurettin Can Orbegi

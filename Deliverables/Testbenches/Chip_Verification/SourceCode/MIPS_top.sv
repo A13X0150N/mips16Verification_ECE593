@@ -1,12 +1,12 @@
 //////////////////////////////////////////////////////////////////////////
-// 	CSM_tb.sv
+// 	MIPS_top.sv
 //	ECE 593 - Fundamentals of Pressilicon Validation
 //	Alex Olson
 //	Nurettin Can Orbegi
 //	Matty Baba Allos
-//	Final Project - Deterministic Testbench Design
+//	Final Project - Top module of the testbench
 // 	----------------------------------------------------
-// 	Description: Deterministic testbench design to show DUV is working
+// 	Description: Top module of testbench other classes are instantiated in this module
 //////////////////////////////////////////////////////////////////////////
 
 

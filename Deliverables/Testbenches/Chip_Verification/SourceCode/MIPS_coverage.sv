@@ -4,9 +4,9 @@
 //	Alex Olson
 //	Nurettin Can Orbegi
 //	Matty Baba Allos
-//	MIPS Coverage Design
+//	Final Project - Coverage
 // 	----------------------------------------------------
-// 	Description: Operation and signal coverages defined in this module
+// 	Description: Operation, source registers and other signal coverages defined in this module
 //////////////////////////////////////////////////////////////////////////
 import MIPS_pkg::*;
 

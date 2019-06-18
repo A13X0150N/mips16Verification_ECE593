@@ -1,3 +1,15 @@
+//////////////////////////////////////////////////////////////////////////
+// 	MIPS_scoreboard_checker.sv
+//	ECE 593 - Fundamentals of Pressilicon Validation
+//	Alex Olson
+//	Nurettin Can Orbegi
+//	Matty Baba Allos
+//	Final Project - Scoreboard and Checker
+// 	----------------------------------------------------
+// 	Description: This class includes checking method and scoreboard method
+//  Checking method compares the data registers of DUV and reference design
+//  Scoreboard saves register values and operation number into a file
+//////////////////////////////////////////////////////////////////////////
 class MIPS_scoreboard_checker;
 
 bit isCorrect;
