@@ -9,7 +9,7 @@
 // 	Description: Required interface to drive DUV
 //////////////////////////////////////////////////////////////////////////
 `timescale 1ns/1ps
-`include "../DUV/mips_16_defs.v"
+`include "../../../DUV/mips_16_defs.v"
 interface mipsIF();
 	import MIPS_pkg::*;
     parameter CLK_PERIOD = 10;

@@ -14,7 +14,7 @@
     //`define CODE_FOR_SYNTHESIS                // uncomment this macro will remove all non-systhesis code
     `define USE_SIMULATION_CODE                 // uncomment this to use simulation instruction memory
 
-    `define PC_WIDTH                8
+    `define PC_WIDTH                16
     `define INSTR_MEM_ADDR_WIDTH    8
     `define DATA_MEM_ADDR_WIDTH     8
 
